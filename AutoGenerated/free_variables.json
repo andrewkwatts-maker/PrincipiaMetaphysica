@@ -982,7 +982,7 @@
           "detail": "self.Omega_matter is read by Omega_DM, which get_all_anchors exports and register_anchors registers as geometry.Omega_DM"
         },
         {
-          "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy_thawing.py:348",
+          "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy_thawing.py:349",
           "function": "run",
           "kind": "READ_INTO_REGISTERED_OUTPUT",
           "detail": "get(...) -> omega_m, which reaches a value position in a returned registry dict"
@@ -1044,7 +1044,7 @@
     {
       "name": "gauge.qcd_cycle_type",
       "value": "Associative 3-cycle with A2 loci (OPEN: Y7 has only A1 loci, D-011)",
-      "location": "src\\metaphysica\\simulations\\PM\\derivations\\gauge_sector_complete.py:1386",
+      "location": "src\\metaphysica\\simulations\\PM\\derivations\\gauge_sector_complete.py:1396",
       "status": "ANSATZ",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1080,7 +1080,7 @@
     {
       "name": "gauge.weak_cycle_type",
       "value": "Co-associative 4-cycle (OPEN: SU(2) only at the unresolved orbifold point, D-011)",
-      "location": "src\\metaphysica\\simulations\\PM\\derivations\\gauge_sector_complete.py:1429",
+      "location": "src\\metaphysica\\simulations\\PM\\derivations\\gauge_sector_complete.py:1439",
       "status": "ANSATZ",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1202,7 +1202,7 @@
     {
       "name": "as_weight",
       "value": null,
-      "location": "src\\metaphysica\\simulations\\PM\\gauge\\asymptotic_safety.py:538",
+      "location": "src\\metaphysica\\simulations\\PM\\gauge\\asymptotic_safety.py:540",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1302,7 +1302,7 @@
     {
       "name": "cosmology.alpha_shadow",
       "value": 0.576,
-      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy.py:1311",
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy.py:1314",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1314,7 +1314,7 @@
     {
       "name": "cosmology.wa_thawing",
       "value": -0.6099942813304187,
-      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy_thawing.py:1457",
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy_thawing.py:1469",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1338,7 +1338,7 @@
     {
       "name": "cosmology.M_Pl_4D",
       "value": 1.2208194772e+19,
-      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\cosmology_intro.py:846",
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\cosmology_intro.py:852",
       "status": "MEASURED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",

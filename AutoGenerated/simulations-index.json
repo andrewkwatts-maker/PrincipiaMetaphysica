@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-10-26T13:10:45.285949Z",
+  "generated_at": "2026-10-31T16:35:02.914857Z",
   "generator": "metaphysica.generators.generate_simulations_index",
-  "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 330,
+  "seed_provenance": "All simulations descend from the seed b3 = 43.",
+  "total_scripts": 347,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -850,7 +850,7 @@
     },
     "PM/gauge": {
       "title": "PM/gauge",
-      "count": 10,
+      "count": 15,
       "scripts": [
         {
           "file": "asymptotic_safety.py",
@@ -929,6 +929,56 @@
             "gauge.weak_canonical",
             "gauge.weak_coupling_g2"
           ]
+        },
+        {
+          "file": "master_ladder.py",
+          "path": "simulations/PM/gauge/master_ladder.py",
+          "category": "PM/gauge",
+          "title": null,
+          "description": "The PM master action as a checked ladder: 26D -> 13D -> 6D -> 4D.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "master_ladder_map.py",
+          "path": "simulations/PM/gauge/master_ladder_map.py",
+          "category": "PM/gauge",
+          "title": null,
+          "description": "Read-only map from every published action formula to the master ladder.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "master_ladder_render.py",
+          "path": "simulations/PM/gauge/master_ladder_render.py",
+          "category": "PM/gauge",
+          "title": null,
+          "description": "Publishing side of the master ladder: every action formula's latex comes from here.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "master_ladder_steps.py",
+          "path": "simulations/PM/gauge/master_ladder_steps.py",
+          "category": "PM/gauge",
+          "title": null,
+          "description": "The PM chain 26D (24,2) -> 13D (12,1) -> 6D (5,1) -> 4D (3,1) as engine actions.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "master_ladder_zero.py",
+          "path": "simulations/PM/gauge/master_ladder_zero.py",
+          "category": "PM/gauge",
+          "title": null,
+          "description": "Lane L3a: zero modes and the nonabelian gauge source on the G2 step of the master ladder.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
         },
         {
           "file": "non_abelian_kk_gauge.py",
@@ -1862,7 +1912,7 @@
     },
     "PM/paper": {
       "title": "PM/paper",
-      "count": 42,
+      "count": 43,
       "scripts": [
         {
           "file": "abstract.py",
@@ -2059,8 +2109,11 @@
           "gates_contributed": [],
           "parameters_contributed": [
             "gates.omega_hash",
+            "gates.path_id",
             "gates.status",
+            "gates.total_applicable",
             "gates.total_failed",
+            "gates.total_not_applicable",
             "gates.total_passed"
           ]
         },
@@ -2362,6 +2415,16 @@
           "category": "PM/paper",
           "title": "Section 1.1: Foundations of Dimensional Descent",
           "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "gate_paths.py",
+          "path": "simulations/PM/paper/appendices/gate_paths.py",
+          "category": "PM/paper",
+          "title": null,
+          "description": "Path-aware inputs and applicability for the Appendix F gates.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -3485,7 +3548,7 @@
     },
     "core": {
       "title": "core",
-      "count": 31,
+      "count": 42,
       "scripts": [
         {
           "file": "FormulasRegistry.py",
@@ -3499,6 +3562,66 @@
             "pm.version",
             "pm.version.short",
             "system.version"
+          ]
+        },
+        {
+          "file": "action.py",
+          "path": "simulations/core/variants/catalogue/action.py",
+          "category": "core",
+          "title": null,
+          "description": "Catalogue: the master action's open choices (owner items 1, 2, 4, 5).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": [
+            "bridge.breathing_aggregation",
+            "bridge.distributed_or_rank",
+            "bridge.n_pairs",
+            "gauge.chirality_reversal_probability",
+            "gauge.hypercharge_canonical",
+            "gauge.hypercharge_coupling_gp",
+            "gauge.kk_canonical",
+            "gauge.kk_gauge_kinetic_coeff",
+            "gauge.kk_planck_factor",
+            "gauge.m_w_gev",
+            "gauge.m_z_gev",
+            "gauge.qcd_alpha_s_mz",
+            "gauge.qcd_canonical",
+            "gauge.qcd_gluon_count",
+            "gauge.rho_parameter",
+            "gauge.sin2_theta_w",
+            "gauge.sin2_theta_w_geometric",
+            "gauge.weak_boson_count",
+            "gauge.weak_canonical",
+            "gauge.weak_coupling_g2"
+          ]
+        },
+        {
+          "file": "adopted.py",
+          "path": "simulations/core/variants/adopted.py",
+          "category": "core",
+          "title": null,
+          "description": "Readers of each fork's currently adopted option, read live from its source.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "algebra.py",
+          "path": "simulations/core/variants/catalogue/algebra.py",
+          "category": "core",
+          "title": null,
+          "description": "Catalogue: algebra forks (Leech lattice).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": [
+            "algebra.clifford_appendix_signature_count",
+            "neutrino.cycles_per_gen",
+            "neutrino.delta_CP_derived",
+            "neutrino.delta_CP_sigma",
+            "neutrino.phi_assoc",
+            "neutrino.sin_theta13_derived",
+            "neutrino.theta13_derived",
+            "neutrino.theta13_sigma"
           ]
         },
         {
@@ -3552,6 +3675,36 @@
           "parameters_contributed": []
         },
         {
+          "file": "cosmology.py",
+          "path": "simulations/core/variants/catalogue/cosmology.py",
+          "category": "core",
+          "title": null,
+          "description": "Catalogue: cosmology forks (spectral index, H0, dark energy, Re(T)).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": [
+            "cosmology.D_eff_shadow",
+            "cosmology.H0_odowd",
+            "cosmology.V_9_internal",
+            "cosmology.alpha_F_r2",
+            "cosmology.attractor_fixed_point",
+            "cosmology.beta_F_trace",
+            "cosmology.brane_tension_5_2",
+            "cosmology.breathing_mode_vev",
+            "cosmology.dm_thermal_relic",
+            "cosmology.epsilon_KK",
+            "cosmology.eta_baryon_geometric",
+            "cosmology.n_bbn_neutrino",
+            "cosmology.omega_dm_geometric",
+            "cosmology.omega_dm_total",
+            "cosmology.pneuma_components_4D",
+            "cosmology.shadow_visible_ratio",
+            "cosmology.sterile_ratio",
+            "cosmology.w0_tzimtzum",
+            "gauge.so10_spinor_dim"
+          ]
+        },
+        {
           "file": "demon_lock_guard.py",
           "path": "simulations/core/demon_lock_guard.py",
           "category": "core",
@@ -3602,6 +3755,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "flavour.py",
+          "path": "simulations/core/variants/catalogue/flavour.py",
+          "category": "core",
+          "title": null,
+          "description": "Catalogue: flavour forks.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "fork_implications.py",
           "path": "simulations/core/fork_implications.py",
           "category": "core",
@@ -3632,6 +3795,26 @@
           "parameters_contributed": []
         },
         {
+          "file": "g2_forms.py",
+          "path": "simulations/core/variants/catalogue/g2_forms.py",
+          "category": "core",
+          "title": null,
+          "description": "Catalogue: G2 geometry forks: forms, construction, moduli, bulk signature.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "g2_metric.py",
+          "path": "simulations/core/variants/catalogue/g2_metric.py",
+          "category": "core",
+          "title": null,
+          "description": "Catalogue: G2 geometry forks: metric construction, chi_eff, twisted norm.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "identify_ghost_literals.py",
           "path": "simulations/core/identify_ghost_literals.py",
           "category": "core",
@@ -3647,6 +3830,16 @@
           "category": "core",
           "title": null,
           "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "model.py",
+          "path": "simulations/core/variants/model.py",
+          "category": "core",
+          "title": null,
+          "description": "Fork model: environment constants and the testground model, re-exported.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -3692,6 +3885,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "policy.py",
+          "path": "simulations/core/variants/catalogue/policy.py",
+          "category": "core",
+          "title": null,
+          "description": "Catalogue: policy forks (render, uncertainty, face genericity).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "preferred_path.py",
           "path": "simulations/core/preferred_path.py",
           "category": "core",
@@ -3712,6 +3915,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "report.py",
+          "path": "simulations/core/variants/report.py",
+          "category": "core",
+          "title": null,
+          "description": "Report: describe(), the AutoGenerated/variants.json writer and the CLI.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "ruled_divergences.py",
           "path": "simulations/core/ruled_divergences.py",
           "category": "core",
@@ -3722,6 +3935,18 @@
           "parameters_contributed": []
         },
         {
+          "file": "seed.py",
+          "path": "simulations/core/variants/catalogue/seed.py",
+          "category": "core",
+          "title": null,
+          "description": "Catalogue: seed and b3 forks (b3 seed, generation count, b3 origin, seed selection).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": [
+            "topology.mephorash_chi"
+          ]
+        },
+        {
           "file": "seed_blindness.py",
           "path": "simulations/core/seed_blindness.py",
           "category": "core",
@@ -3730,6 +3955,26 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
+        },
+        {
+          "file": "selection.py",
+          "path": "simulations/core/variants/selection.py",
+          "category": "core",
+          "title": null,
+          "description": "Selection: constraints, ids, the resolve order, and the in-process override.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": [
+            "cosmology.anthropic_rejected",
+            "cosmology.b3",
+            "cosmology.classification",
+            "cosmology.dynamically_selected",
+            "cosmology.eml_value",
+            "cosmology.flux_modes",
+            "cosmology.log_vacua_raw",
+            "cosmology.pruning_factor",
+            "cosmology.raw_vacua"
+          ]
         },
         {
           "file": "shape_search.py",
@@ -3777,16 +4022,6 @@
           "category": "core",
           "title": null,
           "description": "Triple-track formula validator: Arithma + EML-Math + float.",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "variants.py",
-          "path": "simulations/core/variants.py",
-          "category": "core",
-          "title": null,
-          "description": "Executable forks: run the pipeline under a choice that is not yet ruled.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

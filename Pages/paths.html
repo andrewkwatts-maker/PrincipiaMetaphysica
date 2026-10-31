@@ -39,6 +39,7 @@
             </div>
             <aside class="pp-inspector" id="pp-inspector" aria-live="polite"></aside>
         </div>
+        <ul class="pp-legend" id="pp-legend" aria-label="Legend"></ul>
         <section class="pp-pathlist">
             <h2>All paths</h2>
             <label for="pp-search" class="pp-lead">Search paths</label><br>
@@ -68,6 +69,7 @@
         import { injectHeader } from '../js/pm-header.js';
         document.addEventListener('DOMContentLoaded', () => { injectHeader('paths'); });
     </script>
+    <script src="../js/pm-paths-glow.js"></script>
     <script src="../js/pm-paths-page.js"></script>
     <script src="../js/pm-paths-assessment.js"></script>
 </body>

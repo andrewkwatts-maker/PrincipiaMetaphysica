@@ -54,3 +54,14 @@
 .pp-assess tr.pp-cand td { background: rgba(255, 217, 61, .14); font-weight: 600; }
 .pp-assess .pp-fit { color: #ff9f43; }
 .pp-assess .pp-quiet { opacity: .75; font-size: .85rem; }
+
+/* Reasonable alternatives glow in their own colour, distinct from the gold path (V1). */
+:root { --pp-reasonable: #c77dff; --pp-reasonable-glow: #c77dffcc; }
+.pp-node.pp-reasonable rect { stroke: var(--pp-reasonable); stroke-width: 3; filter: drop-shadow(0 0 6px var(--pp-reasonable-glow)); }
+.pp-reasonable-edge { stroke: var(--pp-reasonable); opacity: .85; filter: drop-shadow(0 0 4px var(--pp-reasonable-glow)); }
+.pp-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 1rem; margin: .5rem 0; padding: 0; color: var(--text-secondary, #adb5bd); }
+.pp-key { display: inline-flex; align-items: center; gap: .4rem; }
+.pp-swatch { width: .9rem; height: .9rem; border-radius: 3px; border: 2px solid var(--accent-gold, #ffd93d); display: inline-block; }
+.pp-key-reasonable .pp-swatch { border-color: var(--pp-reasonable); box-shadow: 0 0 6px var(--pp-reasonable-glow); }
+/* The glow is static: nothing pulses, and reduced motion removes any transition. */
+@media (prefers-reduced-motion: reduce) { .pp-node, .pp-reasonable-edge { transition: none; animation: none; } }

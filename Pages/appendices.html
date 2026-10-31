@@ -18,21 +18,8 @@
     <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
 
-    <!-- MathJax Configuration -->
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true,
-                tags: 'ams'
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
@@ -521,7 +508,7 @@
                         <li>OR operator $R_\perp^2 = -I$ implements Möbius spinor double-cover</li>
                     </ul>
                     <div class="equation">
-                        $$M^{26D(24,2)} \xrightarrow{\text{12×(2,0) bridges + S^{2,0}}} 2\times M^{13D(12,1)} \xrightarrow{G_2} 4D \times M_{G_2}^7$$
+                        $$M^{26D(24,2)} \xrightarrow{\text{12×(2,0) bridges + }S^{2,0}} 2\times M^{13D(12,1)} \xrightarrow{G_2} 4D \times M_{G_2}^7$$
                     </div>
                     <p>This cascade preserves all physical degrees of freedom while eliminating ghosts via two-time structure structure.</p>
                 </div>

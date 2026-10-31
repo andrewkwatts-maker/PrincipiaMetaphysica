@@ -3,7 +3,7 @@
   "audit": "present",
   "engine": {
     "version": "2.3.1",
-    "commit": "838bebc"
+    "commit": "c294094"
   },
   "forks": {
     "spectral_index_route": {
@@ -302,20 +302,20 @@
           "R": {
             "state": "COMPUTED",
             "changed": 203,
-            "share_before": 0.6158,
-            "share_after": 0.6059,
+            "share_before": 0.6108,
+            "share_after": 0.601,
             "d_share": -0.0099,
             "by_status": {
               "INPUT": 2,
               "GEOMETRIC": 26,
-              "DERIVED": 97,
+              "DERIVED": 96,
               "ANSATZ": 2,
               "PREDICTED": 30,
               "FALSIFIED": 4,
               "VALIDATION": 13,
               "FITTED": 6,
               "FITTED_COMPOSITE": 1,
-              "CALIBRATED": 8,
+              "CALIBRATED": 9,
               "SPECULATIVE": 2,
               "EXACT": 1,
               "FOUNDATIONAL": 5,
@@ -323,7 +323,7 @@
               "PREDICTIONS": 1,
               "COMPUTED": 3
             },
-            "calibrated_or_fitted": 15
+            "calibrated_or_fitted": 16
           },
           "E": {
             "state": "COMPUTED",
@@ -1851,6 +1851,138 @@
           "provisional": false,
           "reasons": [
             "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "action_bulk_sectors": {
+      "active": "undecided",
+      "alternatives": [
+        {
+          "option": "e8xe8_ym",
+          "path": "action_bulk_sectors--e8xe8_ym",
+          "P": {
+            "state": "OPEN",
+            "reason": "option not swept"
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "option not swept"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "flux_f4",
+          "path": "action_bulk_sectors--flux_f4",
+          "P": {
+            "state": "OPEN",
+            "reason": "option not swept"
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "option not swept"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "kk_tower",
+          "path": "action_bulk_sectors--kk_tower",
+          "P": {
+            "state": "OPEN",
+            "reason": "option not swept"
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "option not swept"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "none",
+          "path": "action_bulk_sectors--none",
+          "P": {
+            "state": "OPEN",
+            "reason": "option not swept"
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "option not swept"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "action_bulk_spinor": {
+      "active": "weyl",
+      "alternatives": [
+        {
+          "option": "dirac",
+          "path": "action_bulk_spinor--dirac",
+          "P": {
+            "state": "OPEN",
+            "reason": "option not swept"
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "option not swept"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "action_planck_exponent": {
+      "active": "exponent_24",
+      "alternatives": [
+        {
+          "option": "exponent_23",
+          "path": "action_planck_exponent--exponent_23",
+          "P": {
+            "state": "OPEN",
+            "reason": "option not swept"
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "option not swept"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "exponent_25",
+          "path": "action_planck_exponent--exponent_25",
+          "P": {
+            "state": "OPEN",
+            "reason": "option not swept"
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "option not swept"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "action_sign_convention": {
+      "active": "mostly_plus_mtw",
+      "alternatives": [
+        {
+          "option": "mostly_minus",
+          "path": "action_sign_convention--mostly_minus",
+          "P": {
+            "state": "OPEN",
+            "reason": "option not swept"
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "option not swept"
           ],
           "status": "considered"
         }

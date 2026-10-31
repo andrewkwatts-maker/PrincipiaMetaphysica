@@ -858,6 +858,90 @@
       "type": "has_option"
     },
     {
+      "class": "active",
+      "rationale": null,
+      "source": "fork:action_bulk_sectors",
+      "target": "option:action_bulk_sectors.undecided",
+      "type": "has_option"
+    },
+    {
+      "class": "considered",
+      "rationale": null,
+      "source": "fork:action_bulk_sectors",
+      "target": "option:action_bulk_sectors.e8xe8_ym",
+      "type": "has_option"
+    },
+    {
+      "class": "considered",
+      "rationale": null,
+      "source": "fork:action_bulk_sectors",
+      "target": "option:action_bulk_sectors.flux_f4",
+      "type": "has_option"
+    },
+    {
+      "class": "considered",
+      "rationale": null,
+      "source": "fork:action_bulk_sectors",
+      "target": "option:action_bulk_sectors.kk_tower",
+      "type": "has_option"
+    },
+    {
+      "class": "considered",
+      "rationale": null,
+      "source": "fork:action_bulk_sectors",
+      "target": "option:action_bulk_sectors.none",
+      "type": "has_option"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "fork:action_bulk_spinor",
+      "target": "option:action_bulk_spinor.weyl",
+      "type": "has_option"
+    },
+    {
+      "class": "considered",
+      "rationale": null,
+      "source": "fork:action_bulk_spinor",
+      "target": "option:action_bulk_spinor.dirac",
+      "type": "has_option"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "fork:action_planck_exponent",
+      "target": "option:action_planck_exponent.exponent_24",
+      "type": "has_option"
+    },
+    {
+      "class": "considered",
+      "rationale": null,
+      "source": "fork:action_planck_exponent",
+      "target": "option:action_planck_exponent.exponent_23",
+      "type": "has_option"
+    },
+    {
+      "class": "considered",
+      "rationale": null,
+      "source": "fork:action_planck_exponent",
+      "target": "option:action_planck_exponent.exponent_25",
+      "type": "has_option"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "fork:action_sign_convention",
+      "target": "option:action_sign_convention.mostly_plus_mtw",
+      "type": "has_option"
+    },
+    {
+      "class": "considered",
+      "rationale": null,
+      "source": "fork:action_sign_convention",
+      "target": "option:action_sign_convention.mostly_minus",
+      "type": "has_option"
+    },
+    {
       "class": "not_implemented",
       "rationale": null,
       "source": "fork:gauge_origin",
@@ -905,6 +989,138 @@
       "source": "fork:consciousness_model",
       "target": "option:consciousness_model.two_layer_or",
       "type": "has_option"
+    },
+    {
+      "attrs": {
+        "constraint": "n_gen_source=b3_over_dim_O excludes b3_seed=seed_7_joyce",
+        "source": "simulations.PM.geometry.b3_path n_gen_source per path"
+      },
+      "class": "constraint",
+      "rationale": "declared on n_gen_source.b3_over_dim_O",
+      "source": "option:n_gen_source.b3_over_dim_O",
+      "target": "option:b3_seed.seed_7_joyce",
+      "type": "excludes"
+    },
+    {
+      "attrs": {
+        "constraint": "n_gen_source=b3_over_dim_O excludes b3_seed=seed_19_joyce",
+        "source": "simulations.PM.geometry.b3_path n_gen_source per path"
+      },
+      "class": "constraint",
+      "rationale": "declared on n_gen_source.b3_over_dim_O",
+      "source": "option:n_gen_source.b3_over_dim_O",
+      "target": "option:b3_seed.seed_19_joyce",
+      "type": "excludes"
+    },
+    {
+      "attrs": {
+        "constraint": "n_gen_source=b3_over_dim_O excludes b3_seed=seed_31_joyce",
+        "source": "simulations.PM.geometry.b3_path n_gen_source per path"
+      },
+      "class": "constraint",
+      "rationale": "declared on n_gen_source.b3_over_dim_O",
+      "source": "option:n_gen_source.b3_over_dim_O",
+      "target": "option:b3_seed.seed_31_joyce",
+      "type": "excludes"
+    },
+    {
+      "attrs": {
+        "constraint": "n_gen_source=b3_over_dim_O excludes b3_seed=seed_43_joyce",
+        "source": "simulations.PM.geometry.b3_path n_gen_source per path"
+      },
+      "class": "constraint",
+      "rationale": "declared on n_gen_source.b3_over_dim_O",
+      "source": "option:n_gen_source.b3_over_dim_O",
+      "target": "option:b3_seed.seed_43_joyce",
+      "type": "excludes"
+    },
+    {
+      "attrs": {
+        "constraint": "n_gen_source=b2_over_faces excludes b3_seed=seed_24",
+        "source": "simulations.PM.geometry.b3_path n_gen_source per path"
+      },
+      "class": "constraint",
+      "rationale": "declared on n_gen_source.b2_over_faces",
+      "source": "option:n_gen_source.b2_over_faces",
+      "target": "option:b3_seed.seed_24",
+      "type": "excludes"
+    },
+    {
+      "attrs": {
+        "constraint": "n_gen_source=b2_over_faces excludes b3_seed=seed_7_joyce",
+        "source": "simulations.PM.geometry.b3_path n_gen_source per path"
+      },
+      "class": "constraint",
+      "rationale": "declared on n_gen_source.b2_over_faces",
+      "source": "option:n_gen_source.b2_over_faces",
+      "target": "option:b3_seed.seed_7_joyce",
+      "type": "excludes"
+    },
+    {
+      "attrs": {
+        "constraint": "n_gen_source=b2_over_faces excludes b3_seed=seed_19_joyce",
+        "source": "simulations.PM.geometry.b3_path n_gen_source per path"
+      },
+      "class": "constraint",
+      "rationale": "declared on n_gen_source.b2_over_faces",
+      "source": "option:n_gen_source.b2_over_faces",
+      "target": "option:b3_seed.seed_19_joyce",
+      "type": "excludes"
+    },
+    {
+      "attrs": {
+        "constraint": "n_gen_source=b2_over_faces excludes b3_seed=seed_31_joyce",
+        "source": "simulations.PM.geometry.b3_path n_gen_source per path"
+      },
+      "class": "constraint",
+      "rationale": "declared on n_gen_source.b2_over_faces",
+      "source": "option:n_gen_source.b2_over_faces",
+      "target": "option:b3_seed.seed_31_joyce",
+      "type": "excludes"
+    },
+    {
+      "attrs": {
+        "constraint": "chi_eff_route=seed_dependent excludes b3_seed=seed_7_joyce",
+        "source": "simulations.PM.geometry.geometry_narration.CHI_EFF_READING"
+      },
+      "class": "constraint",
+      "rationale": "declared on chi_eff_route.seed_dependent",
+      "source": "option:chi_eff_route.seed_dependent",
+      "target": "option:b3_seed.seed_7_joyce",
+      "type": "excludes"
+    },
+    {
+      "attrs": {
+        "constraint": "chi_eff_route=seed_dependent excludes b3_seed=seed_19_joyce",
+        "source": "simulations.PM.geometry.geometry_narration.CHI_EFF_READING"
+      },
+      "class": "constraint",
+      "rationale": "declared on chi_eff_route.seed_dependent",
+      "source": "option:chi_eff_route.seed_dependent",
+      "target": "option:b3_seed.seed_19_joyce",
+      "type": "excludes"
+    },
+    {
+      "attrs": {
+        "constraint": "chi_eff_route=seed_dependent excludes b3_seed=seed_31_joyce",
+        "source": "simulations.PM.geometry.geometry_narration.CHI_EFF_READING"
+      },
+      "class": "constraint",
+      "rationale": "declared on chi_eff_route.seed_dependent",
+      "source": "option:chi_eff_route.seed_dependent",
+      "target": "option:b3_seed.seed_31_joyce",
+      "type": "excludes"
+    },
+    {
+      "attrs": {
+        "constraint": "chi_eff_route=seed_dependent excludes b3_seed=seed_43_joyce",
+        "source": "simulations.PM.geometry.geometry_narration.CHI_EFF_READING"
+      },
+      "class": "constraint",
+      "rationale": "declared on chi_eff_route.seed_dependent",
+      "source": "option:chi_eff_route.seed_dependent",
+      "target": "option:b3_seed.seed_43_joyce",
+      "type": "excludes"
     },
     {
       "class": "trunk",
@@ -1640,6 +1856,34 @@
       "source": "option:face_genericity.generic",
       "target": "option:seed_selection.wa1_correspondence",
       "type": "path_step"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "option:seed_selection.wa1_correspondence",
+      "target": "option:action_bulk_sectors.undecided",
+      "type": "path_step"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "option:action_bulk_sectors.undecided",
+      "target": "option:action_bulk_spinor.weyl",
+      "type": "path_step"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "option:action_bulk_spinor.weyl",
+      "target": "option:action_planck_exponent.exponent_24",
+      "type": "path_step"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "option:action_planck_exponent.exponent_24",
+      "target": "option:action_sign_convention.mostly_plus_mtw",
+      "type": "path_step"
     }
   ],
   "layout": {
@@ -1650,7 +1894,7 @@
     "bbox": [
       0,
       0,
-      6852,
+      7956,
       660
     ],
     "columns": [
@@ -1854,21 +2098,57 @@
       },
       {
         "depth": 0,
-        "fork": "gauge_origin",
+        "fork": "action_bulk_sectors",
         "index": 22,
         "kind": "physics",
-        "node": "fork:gauge_origin",
+        "node": "fork:action_bulk_sectors",
         "w": 220,
         "x": 6332
       },
       {
         "depth": 0,
-        "fork": "consciousness_model",
+        "fork": "action_bulk_spinor",
         "index": 23,
+        "kind": "physics",
+        "node": "fork:action_bulk_spinor",
+        "w": 220,
+        "x": 6608
+      },
+      {
+        "depth": 0,
+        "fork": "action_planck_exponent",
+        "index": 24,
+        "kind": "physics",
+        "node": "fork:action_planck_exponent",
+        "w": 220,
+        "x": 6884
+      },
+      {
+        "depth": 0,
+        "fork": "action_sign_convention",
+        "index": 25,
+        "kind": "physics",
+        "node": "fork:action_sign_convention",
+        "w": 220,
+        "x": 7160
+      },
+      {
+        "depth": 0,
+        "fork": "gauge_origin",
+        "index": 26,
+        "kind": "physics",
+        "node": "fork:gauge_origin",
+        "w": 220,
+        "x": 7436
+      },
+      {
+        "depth": 0,
+        "fork": "consciousness_model",
+        "index": 27,
         "kind": "physics",
         "node": "fork:consciousness_model",
         "w": 220,
-        "x": 6608
+        "x": 7712
       }
     ],
     "lineage": {
@@ -2190,6 +2470,30 @@
         120,
         40
       ],
+      "fork:action_bulk_sectors": [
+        6332,
+        24,
+        220,
+        48
+      ],
+      "fork:action_bulk_spinor": [
+        6608,
+        24,
+        220,
+        48
+      ],
+      "fork:action_planck_exponent": [
+        6884,
+        24,
+        220,
+        48
+      ],
+      "fork:action_sign_convention": [
+        7160,
+        24,
+        220,
+        48
+      ],
       "fork:b3_origin": [
         1916,
         24,
@@ -2215,7 +2519,7 @@
         48
       ],
       "fork:consciousness_model": [
-        6608,
+        7712,
         24,
         220,
         48
@@ -2257,7 +2561,7 @@
         48
       ],
       "fork:gauge_origin": [
-        6332,
+        7436,
         24,
         220,
         48
@@ -2333,6 +2637,78 @@
         24,
         220,
         48
+      ],
+      "option:action_bulk_sectors.e8xe8_ym": [
+        6332,
+        128,
+        220,
+        36
+      ],
+      "option:action_bulk_sectors.flux_f4": [
+        6332,
+        174,
+        220,
+        36
+      ],
+      "option:action_bulk_sectors.kk_tower": [
+        6332,
+        220,
+        220,
+        36
+      ],
+      "option:action_bulk_sectors.none": [
+        6332,
+        266,
+        220,
+        36
+      ],
+      "option:action_bulk_sectors.undecided": [
+        6332,
+        82,
+        220,
+        36
+      ],
+      "option:action_bulk_spinor.dirac": [
+        6608,
+        128,
+        220,
+        36
+      ],
+      "option:action_bulk_spinor.weyl": [
+        6608,
+        82,
+        220,
+        36
+      ],
+      "option:action_planck_exponent.exponent_23": [
+        6884,
+        128,
+        220,
+        36
+      ],
+      "option:action_planck_exponent.exponent_24": [
+        6884,
+        82,
+        220,
+        36
+      ],
+      "option:action_planck_exponent.exponent_25": [
+        6884,
+        174,
+        220,
+        36
+      ],
+      "option:action_sign_convention.mostly_minus": [
+        7160,
+        128,
+        220,
+        36
+      ],
+      "option:action_sign_convention.mostly_plus_mtw": [
+        7160,
+        82,
+        220,
+        36
       ],
       "option:b3_origin.arc_flag_stabiliser": [
         1916,
@@ -2497,31 +2873,31 @@
         36
       ],
       "option:consciousness_model.iit_orch_or_field": [
-        6608,
+        7712,
         174,
         220,
         36
       ],
       "option:consciousness_model.orch_or_pair_shielding": [
-        6608,
+        7712,
         82,
         220,
         36
       ],
       "option:consciousness_model.spin_liquid_modular_flow": [
-        6608,
+        7712,
         220,
         220,
         36
       ],
       "option:consciousness_model.two_layer_or": [
-        6608,
+        7712,
         266,
         220,
         36
       ],
       "option:consciousness_model.u1_consciousness": [
-        6608,
+        7712,
         128,
         220,
         36
@@ -2659,13 +3035,13 @@
         36
       ],
       "option:gauge_origin.conventional_higgs": [
-        6332,
+        7436,
         82,
         220,
         36
       ],
       "option:gauge_origin.so13_thermal_chain": [
-        6332,
+        7436,
         128,
         220,
         36
@@ -2935,9 +3311,9 @@
     {
       "attrs": {
         "env_prefix": "METAPHYSICA_VARIANT_",
-        "n_constraints": 0,
-        "n_forks": 24,
-        "n_options": 91,
+        "n_constraints": 12,
+        "n_forks": 28,
+        "n_options": 103,
         "theory": "pm"
       },
       "class": "theory",
@@ -7137,10 +7513,590 @@
     },
     {
       "attrs": {
+        "active_from": "store",
+        "active_option": "undecided",
+        "binding": "call_time",
+        "column": 22,
+        "consumers": [
+          "metaphysica.simulations.PM.gauge.master_ladder"
+        ],
+        "decision_refs": [],
+        "depth": 0,
+        "fork": "action_bulk_sectors",
+        "kind": "physics",
+        "legacy_option": null,
+        "n_options": 5,
+        "order": 22,
+        "question": "Which sectors are in the single 26D bulk action?",
+        "source": "simulations.PM.gauge.master_ladder.OWNER_ITEMS[1]",
+        "stage": "simulation",
+        "status": "OPEN",
+        "wired": true
+      },
+      "class": "physics",
+      "id": "fork:action_bulk_sectors",
+      "label": "action_bulk_sectors",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "master_action_audit.md s7 item 1. Drop or define L_C, V_bridge, V_face, V_tor, OR^i, rho_breath.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "Which sectors are in the single 26D bulk action?"
+      },
+      "status": "OPEN",
+      "type": "fork"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": true,
+        "fork": "action_bulk_sectors",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": true,
+        "on_recommended_path": false,
+        "order": 0,
+        "priority": 0,
+        "restored_from": "",
+        "summary": "no ruling; every sector term stays OPEN and item 1 is reported unresolved"
+      },
+      "class": "active",
+      "id": "option:action_bulk_sectors.undecided",
+      "label": "undecided",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "The ladder as built today: build_ladder ignores item 1 and the report lists ym, kT, V, L_bridge, L_C and V_face as blocked by it.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "no ruling; every sector term stays OPEN and item 1 is reported unresolved"
+      },
+      "status": "active",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": false,
+        "fork": "action_bulk_sectors",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 1,
+        "priority": 1,
+        "restored_from": "",
+        "summary": "E8xE8 Yang-Mills is the gauge sector"
+      },
+      "class": "considered",
+      "id": "option:action_bulk_sectors.e8xe8_ym",
+      "label": "e8xe8_ym",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "The bulk terms stay OPEN; only the item's 'unresolved' bookkeeping changes (no term is defined by choosing it).",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "E8xE8 Yang-Mills is the gauge sector"
+      },
+      "status": "considered",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": false,
+        "fork": "action_bulk_sectors",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 2,
+        "priority": 1,
+        "restored_from": "",
+        "summary": "the flux F_4 sector"
+      },
+      "class": "considered",
+      "id": "option:action_bulk_sectors.flux_f4",
+      "label": "flux_f4",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "The bulk terms stay OPEN; only the item's 'unresolved' bookkeeping changes (no term is defined by choosing it).",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "the flux F_4 sector"
+      },
+      "status": "considered",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": false,
+        "fork": "action_bulk_sectors",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 3,
+        "priority": 1,
+        "restored_from": "",
+        "summary": "a KK tower"
+      },
+      "class": "considered",
+      "id": "option:action_bulk_sectors.kk_tower",
+      "label": "kk_tower",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "The bulk terms stay OPEN; only the item's 'unresolved' bookkeeping changes (no term is defined by choosing it).",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "a KK tower"
+      },
+      "status": "considered",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": false,
+        "fork": "action_bulk_sectors",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 4,
+        "priority": 1,
+        "restored_from": "",
+        "summary": "no extra sectors: drop ym, kT, V, L_bridge, L_C and V_face"
+      },
+      "class": "considered",
+      "id": "option:action_bulk_sectors.none",
+      "label": "none",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "Removes every term item 1 blocks; the bulk action is gravity plus the spinor only, so the OPEN count falls and the checks that need those terms are no longer asked.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "no extra sectors: drop ym, kT, V, L_bridge, L_C and V_face"
+      },
+      "status": "considered",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "active_from": "store",
+        "active_option": "weyl",
+        "binding": "call_time",
+        "column": 23,
+        "consumers": [
+          "metaphysica.simulations.PM.gauge.master_ladder"
+        ],
+        "decision_refs": [],
+        "depth": 0,
+        "fork": "action_bulk_spinor",
+        "kind": "physics",
+        "legacy_option": null,
+        "n_options": 2,
+        "order": 23,
+        "question": "Weyl or Dirac bulk spinor?",
+        "source": "simulations.PM.gauge.master_ladder.OWNER_ITEMS[2]",
+        "stage": "simulation",
+        "status": "OPEN",
+        "wired": true
+      },
+      "class": "physics",
+      "id": "fork:action_bulk_spinor",
+      "label": "action_bulk_spinor",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "master_action_audit.md s7 item 2. Weyl vs Dirac bulk spinor.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "Weyl or Dirac bulk spinor?"
+      },
+      "status": "OPEN",
+      "type": "fork"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": true,
+        "fork": "action_bulk_spinor",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": true,
+        "on_recommended_path": false,
+        "order": 0,
+        "priority": 0,
+        "restored_from": "",
+        "summary": "a Weyl bulk spinor (4096 components in 26D)"
+      },
+      "class": "active",
+      "id": "option:action_bulk_spinor.weyl",
+      "label": "weyl",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "Matches the 2026-08-31 signature ruling; m and lambda vanish for a Weyl field, so psi_mass and psi_quartic are absent.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "a Weyl bulk spinor (4096 components in 26D)"
+      },
+      "status": "active",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": false,
+        "fork": "action_bulk_spinor",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 1,
+        "priority": 1,
+        "restored_from": "",
+        "summary": "a Dirac bulk spinor (8192 components in 26D)"
+      },
+      "class": "considered",
+      "id": "option:action_bulk_spinor.dirac",
+      "label": "dirac",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "Doubles the 26D spinor count and adds the OPEN psi_mass and psi_quartic terms; the 26 = 13 + 13 product rule then holds without a Weyl halving.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "a Dirac bulk spinor (8192 components in 26D)"
+      },
+      "status": "considered",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "active_from": "store",
+        "active_option": "exponent_24",
+        "binding": "call_time",
+        "column": 24,
+        "consumers": [
+          "metaphysica.simulations.PM.gauge.master_ladder"
+        ],
+        "decision_refs": [],
+        "depth": 0,
+        "fork": "action_planck_exponent",
+        "kind": "physics",
+        "legacy_option": null,
+        "n_options": 3,
+        "order": 24,
+        "question": "Bulk Planck exponent in M_*^n R",
+        "source": "simulations.PM.gauge.master_ladder.OWNER_ITEMS[4]",
+        "stage": "simulation",
+        "status": "OPEN",
+        "wired": true
+      },
+      "class": "physics",
+      "id": "fork:action_planck_exponent",
+      "label": "action_planck_exponent",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "master_action_audit.md s7 item 4. Bulk Planck exponent.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "Bulk Planck exponent in M_*^n R"
+      },
+      "status": "OPEN",
+      "type": "fork"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": true,
+        "fork": "action_planck_exponent",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": true,
+        "on_recommended_path": false,
+        "order": 0,
+        "priority": 0,
+        "restored_from": "",
+        "summary": "n = D - 2 = 24"
+      },
+      "class": "active",
+      "id": "option:action_planck_exponent.exponent_24",
+      "label": "exponent_24",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "The engine convention for D = 26: M^24 R has mass dimension 26, so the dimension check on the R term passes.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "n = D - 2 = 24"
+      },
+      "status": "active",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": false,
+        "fork": "action_planck_exponent",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 1,
+        "priority": 1,
+        "restored_from": "",
+        "summary": "n = 23"
+      },
+      "class": "considered",
+      "id": "option:action_planck_exponent.exponent_23",
+      "label": "exponent_23",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "Mass dimension of the gravity coefficient is 23, so the dimension check on the R term fails.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "n = 23"
+      },
+      "status": "considered",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": false,
+        "fork": "action_planck_exponent",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 2,
+        "priority": 1,
+        "restored_from": "",
+        "summary": "n = 25"
+      },
+      "class": "considered",
+      "id": "option:action_planck_exponent.exponent_25",
+      "label": "exponent_25",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "Mass dimension of the gravity coefficient is 25, so the dimension check on the R term fails.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "n = 25"
+      },
+      "status": "considered",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "active_from": "store",
+        "active_option": "mostly_plus_mtw",
+        "binding": "call_time",
+        "column": 25,
+        "consumers": [
+          "metaphysica.simulations.PM.gauge.master_ladder"
+        ],
+        "decision_refs": [],
+        "depth": 0,
+        "fork": "action_sign_convention",
+        "kind": "physics",
+        "legacy_option": null,
+        "n_options": 2,
+        "order": 25,
+        "question": "Metric signature and Riemann sign convention",
+        "source": "simulations.PM.gauge.master_ladder.OWNER_ITEMS[5]",
+        "stage": "simulation",
+        "status": "OPEN",
+        "wired": true
+      },
+      "class": "physics",
+      "id": "fork:action_sign_convention",
+      "label": "action_sign_convention",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "master_action_audit.md s7 item 5. Sign convention.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "Metric signature and Riemann sign convention"
+      },
+      "status": "OPEN",
+      "type": "fork"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": true,
+        "fork": "action_sign_convention",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": true,
+        "on_recommended_path": false,
+        "order": 0,
+        "priority": 0,
+        "restored_from": "",
+        "summary": "mostly-plus metric with the MTW Riemann sign"
+      },
+      "class": "active",
+      "id": "option:action_sign_convention.mostly_plus_mtw",
+      "label": "mostly_plus_mtw",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "As in the audit; the weak-field Newtonian check holds.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "mostly-plus metric with the MTW Riemann sign"
+      },
+      "status": "active",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": false,
+        "fork": "action_sign_convention",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 1,
+        "priority": 1,
+        "restored_from": "",
+        "summary": "mostly-minus metric"
+      },
+      "class": "considered",
+      "id": "option:action_sign_convention.mostly_minus",
+      "label": "mostly_minus",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "With the audit's Lagrangian signs unchanged, the weak-field sign check reports FAILS (found by E1).",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "mostly-minus metric"
+      },
+      "status": "considered",
+      "type": "option"
+    },
+    {
+      "attrs": {
         "active_from": "undeclared",
         "active_option": "",
         "binding": "unknown",
-        "column": 22,
+        "column": 26,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -7148,7 +8104,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 2,
-        "order": 22,
+        "order": 26,
         "question": "How does the SO(10) gauge group arise?",
         "source": "archaeology",
         "stage": "simulation",
@@ -7248,7 +8204,7 @@
         "active_from": "undeclared",
         "active_option": "",
         "binding": "unknown",
-        "column": 23,
+        "column": 27,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -7256,7 +8212,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 5,
-        "order": 23,
+        "order": 27,
         "question": "How is consciousness modelled, if at all?",
         "source": "archaeology",
         "stage": "simulation",
@@ -10450,7 +11406,7 @@
   "theory": {
     "active": {
       "decided_by": {},
-      "digest": "9ec96695c2cc2a4f",
+      "digest": "27619df266c8e490",
       "drift": [],
       "lifecycle": "ACTIVE",
       "missing_forks": [

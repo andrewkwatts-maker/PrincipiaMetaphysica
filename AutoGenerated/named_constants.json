@@ -2,9 +2,9 @@
   "version": "24.2",
   "name": "Named Constants Registry",
   "description": "Curated named physics constants from parameters.json, keyed by canonical short name.",
-  "generated_at": "2026-10-26T13:09:53.732477Z",
+  "generated_at": "2026-10-31T16:34:04.158758Z",
   "generator": "metaphysica.generators.generate_named_constants",
-  "seed_provenance": "All constants derive from or calibrate against the seed b3 = 24.",
+  "seed_provenance": "All constants derive from or calibrate against the seed b3 = 43.",
   "total": 9,
   "constants": {
     "M_PLANCK": {
@@ -18,7 +18,7 @@
       "experimental_uncertainty": 3000000000000000.0,
       "sigma_deviation": 0.0,
       "validation_status": "PASS",
-      "seed_provenance": "b3 = 24"
+      "seed_provenance": "b3 = 43"
     },
     "alpha_em": {
       "pm_path": "constants.alpha_em",
@@ -31,7 +31,7 @@
       "experimental_uncertainty": 1.1e-12,
       "sigma_deviation": 0.0,
       "validation_status": "PASS",
-      "seed_provenance": "b3 = 24"
+      "seed_provenance": "b3 = 43"
     },
     "m_proton": {
       "pm_path": "constants.m_proton",
@@ -44,7 +44,7 @@
       "experimental_uncertainty": 5.8e-08,
       "sigma_deviation": 0.0,
       "validation_status": "PASS",
-      "seed_provenance": "b3 = 24"
+      "seed_provenance": "b3 = 43"
     },
     "HBAR": {
       "pm_path": "constants.HBAR",
@@ -57,7 +57,7 @@
       "experimental_uncertainty": 0,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "seed_provenance": "b3 = 24"
+      "seed_provenance": "b3 = 43"
     },
     "k_gimel": {
       "pm_path": "topology.k_gimel",
@@ -70,7 +70,7 @@
       "experimental_uncertainty": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "seed_provenance": "b3 = 24"
+      "seed_provenance": "b3 = 43"
     },
     "b3": {
       "pm_path": "particle.b3",
@@ -83,7 +83,7 @@
       "experimental_uncertainty": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "seed_provenance": "b3 = 24"
+      "seed_provenance": "b3 = 43"
     },
     "phi": {
       "pm_path": "constants.phi",
@@ -96,7 +96,7 @@
       "experimental_uncertainty": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "seed_provenance": "b3 = 24"
+      "seed_provenance": "b3 = 43"
     },
     "roots_total": {
       "pm_path": "geometry.roots_total",
@@ -109,7 +109,7 @@
       "experimental_uncertainty": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "seed_provenance": "b3 = 24"
+      "seed_provenance": "b3 = 43"
     },
     "M_GUT": {
       "pm_path": "geometry.M_GUT",
@@ -122,7 +122,7 @@
       "experimental_uncertainty": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "seed_provenance": "b3 = 24"
+      "seed_provenance": "b3 = 43"
     }
   }
 }

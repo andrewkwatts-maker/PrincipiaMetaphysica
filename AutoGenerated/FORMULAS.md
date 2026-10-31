@@ -133,11 +133,11 @@ The Watts Constant MUST equal exactly 1.0 (immutable).
 
 ## O'Dowd Hubble Formula (v17 Sovereign)
 
-The local Hubble constant is derived geometrically from the manifold base (B3=24):
+The local Hubble constant is derived geometrically from the manifold base at the retired seed_24 value (B3=24; the active seed is seed_43_joyce):
 
 $$H_0 = \frac{ROOTS}{4} - \frac{(7 \times B3) - 5}{B3^2 / 4} + \eta_S$$
 
-Where all values are DERIVED from B3=24:
+Where all values are derived from the retired seed_24 value B3=24:
 - ROOTS/4 = 288/4 = 72 (octonionic/24D structure: b3*12)
 - P_O = (7 * 24) - 5 = 163 (O'Dowd Bulk Pressure - derived from Heptagonal Scaling)
 - pressure_divisor = 24^2 / 4 = 144 (Hexagonal Projection, distinct from chi_eff = 72)
@@ -149,7 +149,7 @@ Where all values are DERIVED from B3=24:
 
 ## v17 Derived Geometric Invariants
 
-These values are DERIVED from the manifold base (B3=24), ensuring absolute geometric sovereignty:
+These values are derived from the manifold base at the retired seed_24 value (B3=24), ensuring absolute geometric sovereignty:
 
 | Invariant | Formula | Value | Verification |
 | :--- | :--- | :--- | :--- |

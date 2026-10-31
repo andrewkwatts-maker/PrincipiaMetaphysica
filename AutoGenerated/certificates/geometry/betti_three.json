@@ -1,4 +1,5 @@
 {
+  "path_status": "superseded: bundled v23.3 snapshot computed on the retired seed_24 path (b3 = 24); the active path is seed_43_joyce",
   "proof_id": "betti_three",
   "label": "Third Betti Number",
   "wl_code": "With[{h11 = 4, h21 = 0, h31 = 68}, b3 = 2*(h11 - h21 + h31)/6; b3]",

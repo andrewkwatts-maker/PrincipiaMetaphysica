@@ -258,12 +258,12 @@
     },
     "refined_neutrino_sum_mass": {
       "b3_traceback": true,
-      "formula": "geometric PMNS sum + Z2 mirror correction from G2 bridge [b3 = 24]",
+      "formula": "geometric PMNS sum + Z2 mirror correction from G2 bridge [b3 of the live seed]",
       "value": 0.04251665543611838
     },
     "sigma_m_base_eV": {
       "b3_traceback": true,
-      "formula": "m1 + m2 + m3 (inverted) from geometric Yukawas + G2 cycles [b3 = 24]",
+      "formula": "m1 + m2 + m3 (inverted) from geometric Yukawas + G2 cycles [b3 of the live seed]",
       "value": 0.06051665543611837
     }
   },
@@ -271,7 +271,7 @@
     "ledger_summary": {
       "b3_traceback": false,
       "formula": "full registry audit + Bayesian Gaussian-prior scan (sigma=1%, N=1000)",
-      "value": 813
+      "value": 816
     },
     "status_count_eml_deferred": {
       "b3_traceback": false,
@@ -296,7 +296,7 @@
     "status_count_numerical_agreement": {
       "b3_traceback": false,
       "formula": "count of registry params classified as numerical_agreement",
-      "value": 174
+      "value": 177
     },
     "status_count_open_tension": {
       "b3_traceback": false,

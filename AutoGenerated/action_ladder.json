@@ -1,0 +1,1195 @@
+{
+ "counts": {
+  "failing_checks": 3,
+  "open_terms": 15
+ },
+ "established": {
+  "A13": {
+   "_skipped": [],
+   "gauge_anomaly_cancellation": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A13"
+     ]
+    ],
+    "detail": "needs gauge_sm; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A13)",
+    "id": "gauge_anomaly_cancellation",
+    "measured": "-",
+    "ref": "Bilal, arXiv:0802.0634 (anomalies); Peskin & Schroeder ch. 19-20",
+    "verdict": "BLOCKED"
+   },
+   "gauge_higgs_mechanism": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A13"
+     ]
+    ],
+    "detail": "needs gauge_sm, scalar_potential; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A13)",
+    "id": "gauge_higgs_mechanism",
+    "measured": "-",
+    "ref": "Peskin & Schroeder (1995), ch. 2, 15, 20, 21",
+    "verdict": "BLOCKED"
+   },
+   "gauge_maxwell": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A13"
+     ]
+    ],
+    "detail": "needs vector_kinetic; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A13)",
+    "id": "gauge_maxwell",
+    "measured": "-",
+    "ref": "Peskin & Schroeder (1995), ch. 2, 15, 20, 21",
+    "verdict": "BLOCKED"
+   },
+   "gauge_yang_mills_su3_su2_u1": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A13"
+     ]
+    ],
+    "detail": "needs gauge_sm; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A13)",
+    "id": "gauge_yang_mills_su3_su2_u1",
+    "measured": "-",
+    "ref": "Georgi, Lie Algebras in Particle Physics (1999), ch. 6-7",
+    "verdict": "BLOCKED"
+   },
+   "gr_flrw_friedmann": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "G_00 = p(p-1)/2 H^2 with p=12, sign s*c=1; H^2 = 2 rho/(p(p-1) M^(D-2)) (4D: 8 pi G rho/3)",
+    "id": "gr_flrw_friedmann",
+    "measured": "0",
+    "ref": "Carroll, Spacetime and Geometry (2004), ch. 5-8",
+    "verdict": "REPRODUCED"
+   },
+   "gr_schwarzschild_vacuum": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "D=13 vacuum, g_rr = f^-1, f = 1-(mu/r)^10",
+    "id": "gr_schwarzschild_vacuum",
+    "measured": "R_ab = 0",
+    "ref": "Myers & Perry, Ann. Phys. 172 (1986) 304 (D-dim Schwarzschild)",
+    "verdict": "REPRODUCED"
+   },
+   "gr_waves_massless_speed_c": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "R_12 linear in h gives omega^2 = 1 k^2 (massless iff 1); D(D-3)/2 = 65",
+    "id": "gr_waves_massless_speed_c",
+    "measured": "v^2=1, polarisations=65",
+    "ref": "Carroll (2004) ch. 7.2-7.3; LIGO/Virgo GW170817 (speed of gravity = c)",
+    "verdict": "REPRODUCED"
+   },
+   "gr_weak_field_poisson": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "G_12=0, G_00-11/10 lap Phi=0; sign s*c=1; coefficient dim 11 vs D-2=11; G_N = 5/(22*pi) / M^11",
+    "id": "gr_weak_field_poisson",
+    "measured": "G_N = 5/(22*pi)",
+    "ref": "Carroll, Spacetime and Geometry (2004), ch. 5-8",
+    "verdict": "REPRODUCED"
+   },
+   "kk_child_dimension:A13": {
+    "area": "reduction",
+    "blocked_on": [],
+    "detail": "D_child = D - dim(internal) = 13",
+    "id": "kk_child_dimension:A13",
+    "measured": "13",
+    "ref": "Overduin & Wesson, Phys. Rep. 283 (1997) 303, sec. 2-3",
+    "verdict": "REPRODUCED"
+   },
+   "kk_planck_mass_relation:A13": {
+    "area": "reduction",
+    "blocked_on": [],
+    "detail": "M_c^(Dc-2) = M^(D-2) Vol; exponents 24 and 11 vs D-2 = 24 and Dc-2 = 11",
+    "id": "kk_planck_mass_relation:A13",
+    "measured": "M13_11 = M_star_24*Vol_13",
+    "ref": "Overduin & Wesson, Phys. Rep. 283 (1997) 303, sec. 2-3",
+    "verdict": "REPRODUCED"
+   },
+   "matter_dirac_equation": {
+    "area": "matter",
+    "blocked_on": [],
+    "detail": "Dirac eq. massless dispersion k^2 = 0; spinor dimension (D-1)/2 = 6",
+    "id": "matter_dirac_equation",
+    "measured": "clifford 0.0e+00, (k.g)^2-k^2 0.0e+00, components 64 vs 64, dim 6",
+    "ref": "Polchinski, String Theory vol. 2 (1998), app. B; Peskin & Schroeder (1995) ch. 3",
+    "verdict": "REPRODUCED"
+   },
+   "matter_universal_coupling": {
+    "area": "matter",
+    "blocked_on": [],
+    "detail": "one metric couples to every matter term; OPEN terms not examined: ['V_face']",
+    "id": "matter_universal_coupling",
+    "measured": "metrics=['G'], non-minimal R-couplings=[]",
+    "ref": "Carroll (2004) ch. 4 (minimal coupling, equivalence principle)",
+    "verdict": "REPRODUCED"
+   }
+  },
+  "A26": {
+   "_skipped": [
+    "gr_schwarzschild_vacuum"
+   ],
+   "gauge_anomaly_cancellation": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A26:ym",
+      "master_action_audit.md s4 (-(1/4g^2) Tr F^2: g map and E8xE8 vs SM unreconciled)"
+     ]
+    ],
+    "detail": "needs gauge_sm; blocked by A26:ym (master_action_audit.md s4 (-(1/4g^2) Tr F^2: g map and E8xE8 vs SM unreconciled))",
+    "id": "gauge_anomaly_cancellation",
+    "measured": "-",
+    "ref": "Bilal, arXiv:0802.0634 (anomalies); Peskin & Schroeder ch. 19-20",
+    "verdict": "BLOCKED"
+   },
+   "gauge_higgs_mechanism": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A26:ym",
+      "master_action_audit.md s4 (-(1/4g^2) Tr F^2: g map and E8xE8 vs SM unreconciled)"
+     ],
+     [
+      "A26:V",
+      "master_action_audit.md s4 (V(T,phi): off-path calibration, moduli OPEN)"
+     ]
+    ],
+    "detail": "needs gauge_sm, scalar_potential; blocked by A26:ym (master_action_audit.md s4 (-(1/4g^2) Tr F^2: g map and E8xE8 vs SM unreconciled)); A26:V (master_action_audit.md s4 (V(T,phi): off-path calibration, moduli OPEN))",
+    "id": "gauge_higgs_mechanism",
+    "measured": "-",
+    "ref": "Peskin & Schroeder (1995), ch. 2, 15, 20, 21",
+    "verdict": "BLOCKED"
+   },
+   "gauge_maxwell": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A26:ym",
+      "master_action_audit.md s4 (-(1/4g^2) Tr F^2: g map and E8xE8 vs SM unreconciled)"
+     ]
+    ],
+    "detail": "needs vector_kinetic; blocked by A26:ym (master_action_audit.md s4 (-(1/4g^2) Tr F^2: g map and E8xE8 vs SM unreconciled))",
+    "id": "gauge_maxwell",
+    "measured": "-",
+    "ref": "Peskin & Schroeder (1995), ch. 2, 15, 20, 21",
+    "verdict": "BLOCKED"
+   },
+   "gauge_yang_mills_su3_su2_u1": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A26:ym",
+      "master_action_audit.md s4 (-(1/4g^2) Tr F^2: g map and E8xE8 vs SM unreconciled)"
+     ]
+    ],
+    "detail": "needs gauge_sm; blocked by A26:ym (master_action_audit.md s4 (-(1/4g^2) Tr F^2: g map and E8xE8 vs SM unreconciled))",
+    "id": "gauge_yang_mills_su3_su2_u1",
+    "measured": "-",
+    "ref": "Georgi, Lie Algebras in Particle Physics (1999), ch. 6-7",
+    "verdict": "BLOCKED"
+   },
+   "gr_flrw_friedmann": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "G_00 = p(p-1)/2 H^2 with p=24, sign s*c=1; H^2 = 2 rho/(p(p-1) M^(D-2)) (4D: 8 pi G rho/3)",
+    "id": "gr_flrw_friedmann",
+    "measured": "0",
+    "ref": "Carroll, Spacetime and Geometry (2004), ch. 5-8",
+    "verdict": "REPRODUCED"
+   },
+   "gr_waves_massless_speed_c": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "R_12 linear in h gives omega^2 = 1 k^2 (massless iff 1); D(D-3)/2 = 299",
+    "id": "gr_waves_massless_speed_c",
+    "measured": "v^2=1, polarisations=299",
+    "ref": "Carroll (2004) ch. 7.2-7.3; LIGO/Virgo GW170817 (speed of gravity = c)",
+    "verdict": "REPRODUCED"
+   },
+   "gr_weak_field_poisson": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "G_12=0, G_00-23/22 lap Phi=0; sign s*c=1; coefficient dim 24 vs D-2=24; G_N = 11/(46*pi) / M^24",
+    "id": "gr_weak_field_poisson",
+    "measured": "G_N = 11/(46*pi)",
+    "ref": "Carroll, Spacetime and Geometry (2004), ch. 5-8",
+    "verdict": "REPRODUCED"
+   },
+   "matter_dirac_equation": {
+    "area": "matter",
+    "blocked_on": [],
+    "detail": "Dirac eq. massless dispersion k^2 = 0; spinor dimension (D-1)/2 = 25/2",
+    "id": "matter_dirac_equation",
+    "measured": "clifford 0.0e+00, (k.g)^2-k^2 0.0e+00, components 4096 vs 4096, dim 25/2",
+    "ref": "Polchinski, String Theory vol. 2 (1998), app. B; Peskin & Schroeder (1995) ch. 3",
+    "verdict": "REPRODUCED"
+   },
+   "matter_universal_coupling": {
+    "area": "matter",
+    "blocked_on": [],
+    "detail": "one metric couples to every matter term; OPEN terms not examined: ['ym', 'kT', 'V', 'xi_R_phi2', 'L_bridge', 'L_C']",
+    "id": "matter_universal_coupling",
+    "measured": "metrics=['G'], non-minimal R-couplings=[]",
+    "ref": "Carroll (2004) ch. 4 (minimal coupling, equivalence principle)",
+    "verdict": "REPRODUCED"
+   }
+  },
+  "A4": {
+   "_skipped": [],
+   "gauge_anomaly_cancellation": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011)"
+     ]
+    ],
+    "detail": "needs gauge_sm; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011))",
+    "id": "gauge_anomaly_cancellation",
+    "measured": "-",
+    "ref": "Bilal, arXiv:0802.0634 (anomalies); Peskin & Schroeder ch. 19-20",
+    "verdict": "BLOCKED"
+   },
+   "gauge_higgs_mechanism": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011)"
+     ]
+    ],
+    "detail": "needs gauge_sm, scalar_potential; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011))",
+    "id": "gauge_higgs_mechanism",
+    "measured": "-",
+    "ref": "Peskin & Schroeder (1995), ch. 2, 15, 20, 21",
+    "verdict": "BLOCKED"
+   },
+   "gauge_maxwell": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011)"
+     ]
+    ],
+    "detail": "needs vector_kinetic; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011))",
+    "id": "gauge_maxwell",
+    "measured": "-",
+    "ref": "Peskin & Schroeder (1995), ch. 2, 15, 20, 21",
+    "verdict": "BLOCKED"
+   },
+   "gauge_yang_mills_su3_su2_u1": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011)"
+     ]
+    ],
+    "detail": "needs gauge_sm; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011))",
+    "id": "gauge_yang_mills_su3_su2_u1",
+    "measured": "-",
+    "ref": "Georgi, Lie Algebras in Particle Physics (1999), ch. 6-7",
+    "verdict": "BLOCKED"
+   },
+   "gr_flrw_friedmann": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "G_00 = p(p-1)/2 H^2 with p=3, sign s*c=1; H^2 = 2 rho/(p(p-1) M^(D-2)) (4D: 8 pi G rho/3)",
+    "id": "gr_flrw_friedmann",
+    "measured": "0",
+    "ref": "Carroll, Spacetime and Geometry (2004), ch. 5-8",
+    "verdict": "REPRODUCED"
+   },
+   "gr_schwarzschild_vacuum": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "D=4 vacuum, g_rr = f^-1, f = 1-(mu/r)^1",
+    "id": "gr_schwarzschild_vacuum",
+    "measured": "R_ab = 0",
+    "ref": "Myers & Perry, Ann. Phys. 172 (1986) 304 (D-dim Schwarzschild)",
+    "verdict": "REPRODUCED"
+   },
+   "gr_waves_massless_speed_c": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "R_12 linear in h gives omega^2 = 1 k^2 (massless iff 1); D(D-3)/2 = 2",
+    "id": "gr_waves_massless_speed_c",
+    "measured": "v^2=1, polarisations=2",
+    "ref": "Carroll (2004) ch. 7.2-7.3; LIGO/Virgo GW170817 (speed of gravity = c)",
+    "verdict": "REPRODUCED"
+   },
+   "gr_weak_field_poisson": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "G_12=0, G_00-2 lap Phi=0; sign s*c=1; coefficient dim 2 vs D-2=2; G_N = 1/(8*pi) / M^2",
+    "id": "gr_weak_field_poisson",
+    "measured": "G_N = 1/(8*pi)",
+    "ref": "Carroll, Spacetime and Geometry (2004), ch. 5-8",
+    "verdict": "REPRODUCED"
+   },
+   "kk_child_dimension:A4": {
+    "area": "reduction",
+    "blocked_on": [],
+    "detail": "D_child = D - dim(internal) = 4",
+    "id": "kk_child_dimension:A4",
+    "measured": "4",
+    "ref": "Overduin & Wesson, Phys. Rep. 283 (1997) 303, sec. 2-3",
+    "verdict": "REPRODUCED"
+   },
+   "kk_planck_mass_relation:A4": {
+    "area": "reduction",
+    "blocked_on": [],
+    "detail": "M_c^(Dc-2) = M^(D-2) Vol; exponents 4 and 2 vs D-2 = 4 and Dc-2 = 2",
+    "id": "kk_planck_mass_relation:A4",
+    "measured": "M_Pl_2 = M6_4*Vol_2",
+    "ref": "Overduin & Wesson, Phys. Rep. 283 (1997) 303, sec. 2-3",
+    "verdict": "REPRODUCED"
+   },
+   "matter_dirac_equation": {
+    "area": "matter",
+    "blocked_on": [],
+    "detail": "Dirac eq. massless dispersion k^2 = 0; spinor dimension (D-1)/2 = 3/2",
+    "id": "matter_dirac_equation",
+    "measured": "clifford 0.0e+00, (k.g)^2-k^2 0.0e+00, components 4 vs 4, dim 3/2",
+    "ref": "Polchinski, String Theory vol. 2 (1998), app. B; Peskin & Schroeder (1995) ch. 3",
+    "verdict": "REPRODUCED"
+   },
+   "matter_universal_coupling": {
+    "area": "matter",
+    "blocked_on": [],
+    "detail": "one metric couples to every matter term; OPEN terms not examined: ['L_SM', 'L_portal', 'L_DM']",
+    "id": "matter_universal_coupling",
+    "measured": "metrics=['G'], non-minimal R-couplings=[]",
+    "ref": "Carroll (2004) ch. 4 (minimal coupling, equivalence principle)",
+    "verdict": "REPRODUCED"
+   }
+  },
+  "A6": {
+   "_skipped": [],
+   "gauge_anomaly_cancellation": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A6"
+     ]
+    ],
+    "detail": "needs gauge_sm; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A6)",
+    "id": "gauge_anomaly_cancellation",
+    "measured": "-",
+    "ref": "Bilal, arXiv:0802.0634 (anomalies); Peskin & Schroeder ch. 19-20",
+    "verdict": "BLOCKED"
+   },
+   "gauge_higgs_mechanism": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A6"
+     ]
+    ],
+    "detail": "needs gauge_sm, scalar_potential; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A6)",
+    "id": "gauge_higgs_mechanism",
+    "measured": "-",
+    "ref": "Peskin & Schroeder (1995), ch. 2, 15, 20, 21",
+    "verdict": "BLOCKED"
+   },
+   "gauge_maxwell": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A6"
+     ]
+    ],
+    "detail": "needs vector_kinetic; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A6)",
+    "id": "gauge_maxwell",
+    "measured": "-",
+    "ref": "Peskin & Schroeder (1995), ch. 2, 15, 20, 21",
+    "verdict": "BLOCKED"
+   },
+   "gauge_yang_mills_su3_su2_u1": {
+    "area": "gauge",
+    "blocked_on": [
+     [
+      "A4:L_SM",
+      "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A6"
+     ]
+    ],
+    "detail": "needs gauge_sm; blocked by A4:L_SM (master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011); absent from A6)",
+    "id": "gauge_yang_mills_su3_su2_u1",
+    "measured": "-",
+    "ref": "Georgi, Lie Algebras in Particle Physics (1999), ch. 6-7",
+    "verdict": "BLOCKED"
+   },
+   "gr_flrw_friedmann": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "G_00 = p(p-1)/2 H^2 with p=5, sign s*c=1; H^2 = 2 rho/(p(p-1) M^(D-2)) (4D: 8 pi G rho/3)",
+    "id": "gr_flrw_friedmann",
+    "measured": "0",
+    "ref": "Carroll, Spacetime and Geometry (2004), ch. 5-8",
+    "verdict": "REPRODUCED"
+   },
+   "gr_schwarzschild_vacuum": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "D=6 vacuum, g_rr = f^-1, f = 1-(mu/r)^3",
+    "id": "gr_schwarzschild_vacuum",
+    "measured": "R_ab = 0",
+    "ref": "Myers & Perry, Ann. Phys. 172 (1986) 304 (D-dim Schwarzschild)",
+    "verdict": "REPRODUCED"
+   },
+   "gr_waves_massless_speed_c": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "R_12 linear in h gives omega^2 = 1 k^2 (massless iff 1); D(D-3)/2 = 9",
+    "id": "gr_waves_massless_speed_c",
+    "measured": "v^2=1, polarisations=9",
+    "ref": "Carroll (2004) ch. 7.2-7.3; LIGO/Virgo GW170817 (speed of gravity = c)",
+    "verdict": "REPRODUCED"
+   },
+   "gr_weak_field_poisson": {
+    "area": "gravity",
+    "blocked_on": [],
+    "detail": "G_12=0, G_00-4/3 lap Phi=0; sign s*c=1; coefficient dim 4 vs D-2=4; G_N = 3/(16*pi) / M^4",
+    "id": "gr_weak_field_poisson",
+    "measured": "G_N = 3/(16*pi)",
+    "ref": "Carroll, Spacetime and Geometry (2004), ch. 5-8",
+    "verdict": "REPRODUCED"
+   },
+   "kk_child_dimension:A6": {
+    "area": "reduction",
+    "blocked_on": [],
+    "detail": "D_child = D - dim(internal) = 6",
+    "id": "kk_child_dimension:A6",
+    "measured": "6",
+    "ref": "Overduin & Wesson, Phys. Rep. 283 (1997) 303, sec. 2-3",
+    "verdict": "REPRODUCED"
+   },
+   "kk_planck_mass_relation:A6": {
+    "area": "reduction",
+    "blocked_on": [],
+    "detail": "M_c^(Dc-2) = M^(D-2) Vol; exponents 11 and 4 vs D-2 = 11 and Dc-2 = 4",
+    "id": "kk_planck_mass_relation:A6",
+    "measured": "M6_4 = M13_11*Vol_7",
+    "ref": "Overduin & Wesson, Phys. Rep. 283 (1997) 303, sec. 2-3",
+    "verdict": "REPRODUCED"
+   },
+   "matter_dirac_equation": {
+    "area": "matter",
+    "blocked_on": [],
+    "detail": "Dirac eq. massless dispersion k^2 = 0; spinor dimension (D-1)/2 = 5/2",
+    "id": "matter_dirac_equation",
+    "measured": "clifford 0.0e+00, (k.g)^2-k^2 0.0e+00, components 8 vs 8, dim 5/2",
+    "ref": "Polchinski, String Theory vol. 2 (1998), app. B; Peskin & Schroeder (1995) ch. 3",
+    "verdict": "REPRODUCED"
+   },
+   "matter_universal_coupling": {
+    "area": "matter",
+    "blocked_on": [],
+    "detail": "one metric couples to every matter term; OPEN terms not examined: []",
+    "id": "matter_universal_coupling",
+    "measured": "metrics=['G'], non-minimal R-couplings=[]",
+    "ref": "Carroll (2004) ch. 4 (minimal coupling, equivalence principle)",
+    "verdict": "REPRODUCED"
+   }
+  }
+ },
+ "established_counts": {
+  "BLOCKED": 16,
+  "FAILS": 0,
+  "REPRODUCED": 29
+ },
+ "failing_checks": [
+  "nonabelian_gauge_source",
+  "owner_item_6",
+  "zero_modes:scalar"
+ ],
+ "item_11": {
+  "dirac_26": 8192,
+  "naive_64x64": 4096,
+  "product_13_13": 8192,
+  "supports": "dirac_8192_and_its_weyl_half_4096",
+  "weyl_26": 4096
+ },
+ "ladder": {
+  "steps": [
+   {
+    "checks": [
+     {
+      "can_fail": true,
+      "detail": "term dimension 26, required 26",
+      "holds": true,
+      "id": "dim:A26:R",
+      "measured": "26",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient M_star_24 provider 'metaphysica.simulations.PM.gauge.master_action'",
+      "holds": true,
+      "id": "source:A26:R",
+      "measured": "INPUT",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A26:R",
+      "measured": "INPUT",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 26, required 26",
+      "holds": true,
+      "id": "dim:A26:psi_kin",
+      "measured": "26",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_kin_A26 provider 'metaphysica.simulations.PM.gauge.master_action'",
+      "holds": true,
+      "id": "source:A26:psi_kin",
+      "measured": "INPUT",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A26:psi_kin",
+      "measured": "INPUT",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 26, required 26",
+      "holds": true,
+      "id": "dim:A26:ym",
+      "measured": "26",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_ym provider None",
+      "holds": true,
+      "id": "source:A26:ym",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A26:ym",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 26, required 26",
+      "holds": true,
+      "id": "dim:A26:kT",
+      "measured": "26",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_kT provider None",
+      "holds": true,
+      "id": "source:A26:kT",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A26:kT",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 26, required 26",
+      "holds": true,
+      "id": "dim:A26:V",
+      "measured": "26",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_V provider None",
+      "holds": true,
+      "id": "source:A26:V",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A26:V",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 26, required 26",
+      "holds": true,
+      "id": "dim:A26:xi_R_phi2",
+      "measured": "26",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_xi_R_phi2 provider None",
+      "holds": true,
+      "id": "source:A26:xi_R_phi2",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A26:xi_R_phi2",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 26, required 26",
+      "holds": true,
+      "id": "dim:A26:L_bridge",
+      "measured": "26",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_L_bridge provider None",
+      "holds": true,
+      "id": "source:A26:L_bridge",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A26:L_bridge",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 26, required 26",
+      "holds": true,
+      "id": "dim:A26:L_C",
+      "measured": "26",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_L_C provider None",
+      "holds": true,
+      "id": "source:A26:L_C",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A26:L_C",
+      "measured": "OPEN",
+      "source": "dimensions:A26"
+     }
+    ],
+    "step": "26D"
+   },
+   {
+    "checks": [
+     {
+      "can_fail": true,
+      "detail": "term dimension 13, required 13",
+      "holds": true,
+      "id": "dim:A13:R",
+      "measured": "13",
+      "source": "dimensions:A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient M13_11 provider 'metaphysica.simulations.PM.gauge.master_ladder'",
+      "holds": true,
+      "id": "source:A13:R",
+      "measured": "DERIVED",
+      "source": "dimensions:A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A13:R",
+      "measured": "DERIVED",
+      "source": "dimensions:A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 13, required 13",
+      "holds": true,
+      "id": "dim:A13:psi_kin",
+      "measured": "13",
+      "source": "dimensions:A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_kin_A13 provider 'metaphysica.simulations.PM.gauge.master_ladder'",
+      "holds": true,
+      "id": "source:A13:psi_kin",
+      "measured": "DERIVED",
+      "source": "dimensions:A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A13:psi_kin",
+      "measured": "DERIVED",
+      "source": "dimensions:A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 13, required 13",
+      "holds": true,
+      "id": "dim:A13:V_face",
+      "measured": "13",
+      "source": "dimensions:A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_V_face provider None",
+      "holds": true,
+      "id": "source:A13:V_face",
+      "measured": "OPEN",
+      "source": "dimensions:A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A13:V_face",
+      "measured": "OPEN",
+      "source": "dimensions:A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "child 13, parent 26 minus internal 13",
+      "holds": true,
+      "id": "reduction_dim:A13",
+      "measured": "13",
+      "source": "reduction:A26->A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "times 2 -> 1",
+      "holds": true,
+      "id": "reduction_time:A13",
+      "measured": "1",
+      "source": "reduction:A26->A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "mapped dimension 11, child declares 11",
+      "holds": true,
+      "id": "map:M13_11",
+      "measured": "11",
+      "source": "reduction:A26->A13"
+     },
+     {
+      "can_fail": true,
+      "detail": "product rule gives 4096",
+      "holds": true,
+      "id": "spinor_product:26D",
+      "measured": "4096",
+      "source": "Polchinski vol. 2 App. B; Van Proeyen, Tools for supersymmetry (1999), Table 3"
+     },
+     {
+      "can_fail": true,
+      "detail": "26 -> 13 drops a time; no ruling on where it goes (audit s5.8, s7 item 6)",
+      "holds": false,
+      "id": "owner_item_6",
+      "measured": "unresolved",
+      "source": "master_action_audit.md s5.8, s7 item 6"
+     }
+    ],
+    "step": "13D"
+   },
+   {
+    "checks": [
+     {
+      "can_fail": true,
+      "detail": "term dimension 6, required 6",
+      "holds": true,
+      "id": "dim:A6:R",
+      "measured": "6",
+      "source": "dimensions:A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient M6_4 provider 'metaphysica.simulations.PM.gauge.master_ladder'",
+      "holds": true,
+      "id": "source:A6:R",
+      "measured": "DERIVED",
+      "source": "dimensions:A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A6:R",
+      "measured": "DERIVED",
+      "source": "dimensions:A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 6, required 6",
+      "holds": true,
+      "id": "dim:A6:psi_kin",
+      "measured": "6",
+      "source": "dimensions:A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_kin_A6 provider 'metaphysica.simulations.PM.gauge.master_ladder'",
+      "holds": true,
+      "id": "source:A6:psi_kin",
+      "measured": "DERIVED",
+      "source": "dimensions:A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A6:psi_kin",
+      "measured": "DERIVED",
+      "source": "dimensions:A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "child 6, parent 13 minus internal 7",
+      "holds": true,
+      "id": "reduction_dim:A6",
+      "measured": "6",
+      "source": "reduction:A13->A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "times 1 -> 1",
+      "holds": true,
+      "id": "reduction_time:A6",
+      "measured": "1",
+      "source": "reduction:A13->A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "mapped dimension 4, child declares 4",
+      "holds": true,
+      "id": "map:M6_4",
+      "measured": "4",
+      "source": "reduction:A13->A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "expected 1 components, child has 1",
+      "holds": true,
+      "id": "zero_modes:G",
+      "measured": "1",
+      "source": "reduction:A13->A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "expected 8 components, child has 8",
+      "holds": true,
+      "id": "zero_modes:Psi",
+      "measured": "8",
+      "source": "reduction:A13->A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "expected 43 components, child has None",
+      "holds": false,
+      "id": "zero_modes:scalar",
+      "measured": "43",
+      "source": "reduction:A13->A6"
+     },
+     {
+      "can_fail": true,
+      "detail": "product rule gives 64",
+      "holds": true,
+      "id": "spinor_product:13D",
+      "measured": "64",
+      "source": "Polchinski vol. 2 App. B; Van Proeyen, Tools for supersymmetry (1999), Table 3"
+     },
+     {
+      "can_fail": true,
+      "detail": "smooth G2 gives U(1)^12 only; PM declares SU(3)/SU(2) in ['A4:L_SM']; source class: None. Active Z2^3 with its 12 A1 loci kept: SU(2)^12 with b1 = [3] adjoint chirals (non-chiral), has_su3_su2 = False, kept (b2, b3) = (0, 7). Acharya hep-th/9812205; Atiyah & Witten hep-th/0107177: M-theory on a smooth G2 gives U(1)^b2 only; nonabelian groups need singular loci kept",
+      "holds": false,
+      "id": "nonabelian_gauge_source",
+      "measured": "no source",
+      "source": "Acharya hep-th/9812205; Atiyah & Witten hep-th/0107177: M-theory on a smooth G2 gives U(1)^b2 only; nonabelian groups need singular loci kept"
+     }
+    ],
+    "step": "6D"
+   },
+   {
+    "checks": [
+     {
+      "can_fail": true,
+      "detail": "term dimension 4, required 4",
+      "holds": true,
+      "id": "dim:A4:R",
+      "measured": "4",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient M_Pl_2 provider 'metaphysica.simulations.PM.gauge.master_ladder'",
+      "holds": true,
+      "id": "source:A4:R",
+      "measured": "DERIVED",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A4:R",
+      "measured": "DERIVED",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 4, required 4",
+      "holds": true,
+      "id": "dim:A4:psi_kin",
+      "measured": "4",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_kin_A4 provider 'metaphysica.simulations.PM.gauge.master_ladder'",
+      "holds": true,
+      "id": "source:A4:psi_kin",
+      "measured": "DERIVED",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A4:psi_kin",
+      "measured": "DERIVED",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 4, required 4",
+      "holds": true,
+      "id": "dim:A4:L_SM",
+      "measured": "4",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_L_SM provider None",
+      "holds": true,
+      "id": "source:A4:L_SM",
+      "measured": "OPEN",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A4:L_SM",
+      "measured": "OPEN",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 4, required 4",
+      "holds": true,
+      "id": "dim:A4:L_portal",
+      "measured": "4",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_L_portal provider None",
+      "holds": true,
+      "id": "source:A4:L_portal",
+      "measured": "OPEN",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A4:L_portal",
+      "measured": "OPEN",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "term dimension 4, required 4",
+      "holds": true,
+      "id": "dim:A4:L_DM",
+      "measured": "4",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "coefficient c_L_DM provider None",
+      "holds": true,
+      "id": "source:A4:L_DM",
+      "measured": "OPEN",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "ok",
+      "holds": true,
+      "id": "open:A4:L_DM",
+      "measured": "OPEN",
+      "source": "dimensions:A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "child 4, parent 6 minus internal 2",
+      "holds": true,
+      "id": "reduction_dim:A4",
+      "measured": "4",
+      "source": "reduction:A6->A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "times 1 -> 1",
+      "holds": true,
+      "id": "reduction_time:A4",
+      "measured": "1",
+      "source": "reduction:A6->A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "mapped dimension 2, child declares 2",
+      "holds": true,
+      "id": "map:M_Pl_2",
+      "measured": "2",
+      "source": "reduction:A6->A4"
+     },
+     {
+      "can_fail": true,
+      "detail": "product rule gives 8",
+      "holds": true,
+      "id": "spinor_product:6D",
+      "measured": "8",
+      "source": "Polchinski vol. 2 App. B; Van Proeyen, Tools for supersymmetry (1999), Table 3"
+     },
+     {
+      "can_fail": true,
+      "detail": "Dirac count",
+      "holds": true,
+      "id": "spinor_dirac:A4",
+      "measured": "4",
+      "source": "Polchinski vol. 2 App. B; Van Proeyen, Tools for supersymmetry (1999), Table 3"
+     }
+    ],
+    "step": "4D"
+   }
+  ],
+  "verdict": "owner_item_6"
+ },
+ "open_terms": {
+  "A13:V_face": "master_action_audit.md s4 (V_face: no definition)",
+  "A26:L_C": "master_action_audit.md s4 (L_C: no definition)",
+  "A26:L_bridge": "master_action_audit.md s4 (sum_12 L_bridge: rho_breath, OR^i undefined)",
+  "A26:V": "master_action_audit.md s4 (V(T,phi): off-path calibration, moduli OPEN)",
+  "A26:kT": "master_action_audit.md s4 (-K|dT|^2: no value)",
+  "A26:xi_R_phi2": "master_action_audit.md s4 (xi R phi^2: phi dimension 12 vs g_s = e^phi)",
+  "A26:ym": "master_action_audit.md s4 (-(1/4g^2) Tr F^2: g map and E8xE8 vs SM unreconciled)",
+  "A4:L_DM": "master_action_audit.md s2 F (named, not defined)",
+  "A4:L_SM": "master_action_audit.md s2 F and J (SU(3)/SU(2) sources OPEN, D-011)",
+  "A4:L_portal": "master_action_audit.md s2 F (named, not defined)",
+  "undefined:OR^i": "master_action_audit.md s4 (L_bridge row)",
+  "undefined:V_bridge": "master_action_audit.md s4 (statements C, D; double counts L_bridge)",
+  "undefined:V_face": "master_action_audit.md s4 (statements C, D, F)",
+  "undefined:V_tor": "master_action_audit.md s4 (statement D)",
+  "undefined:rho_breath": "master_action_audit.md s4 (L_bridge row)"
+ },
+ "owner_items_unresolved": {
+  "1": [
+   "A13:V_face",
+   "A26:L_C",
+   "A26:L_bridge",
+   "A26:V",
+   "A26:kT",
+   "A26:ym"
+  ],
+  "6": [
+   "reduction:26D->13D"
+  ],
+  "8": [
+   "A26:xi_R_phi2",
+   "A26:ym"
+  ]
+ },
+ "owner_items_used": {
+  "11": "computed",
+  "2": "weyl",
+  "4": 24,
+  "5": "mostly_plus_mtw"
+ },
+ "spinors": {
+  "13D": {
+   "dirac": 64,
+   "majorana_allowed": false,
+   "majorana_weyl_allowed": false,
+   "weyl": null
+  },
+  "26D": {
+   "dirac": 8192,
+   "majorana_allowed": true,
+   "majorana_weyl_allowed": false,
+   "weyl": 4096
+  },
+  "4D": {
+   "dirac": 4,
+   "majorana_allowed": true,
+   "majorana_weyl_allowed": false,
+   "weyl": 2
+  },
+  "6D": {
+   "dirac": 8,
+   "majorana_allowed": false,
+   "majorana_weyl_allowed": false,
+   "weyl": 4
+  }
+ }
+}

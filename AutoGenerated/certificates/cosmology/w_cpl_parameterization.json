@@ -1,4 +1,5 @@
 {
+  "path_status": "superseded: bundled v23.3 snapshot computed on the retired seed_24 path (b3 = 24); the active path is seed_43_joyce",
   "proof_id": "w_cpl_parameterization",
   "label": "CPL w(z) at z=0.45",
   "wl_code": "With[{b3 = 24, z = 0.45}, w0 = -1 + 1/b3; wa = 0.0; N[w0 + wa * (z/(1+z)), 6]]",

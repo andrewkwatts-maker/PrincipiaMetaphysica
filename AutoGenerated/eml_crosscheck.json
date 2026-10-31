@@ -1,7 +1,7 @@
 {
-  "total": 813,
+  "total": 816,
   "with_eml_description": 633,
-  "skip": 208,
+  "skip": 211,
   "buckets": {
     "AGREE": 520,
     "ERROR": 7,
@@ -1969,13 +1969,13 @@
     {
       "path": "gates.omega_hash",
       "status": "SKIP",
-      "reason": "non-numeric value: 'ff0550f0f2ff391a'",
+      "reason": "non-numeric value: 'INCOMPLETE_5021e54c59727b4c'",
       "eml_description": "Floating-point terminal variance from the Omega Hash protocol; equals 0.000... (machine precision) when all 72 gates pass and the model is sterile."
     },
     {
       "path": "gates.status",
       "status": "SKIP",
-      "reason": "non-numeric value: 'STERILE: 72/72 GATES LOCKED'",
+      "reason": "non-numeric value: 'NON-TERMINAL: 59/71 APPLICABLE GATES'",
       "eml_description": "String status flag indicating overall gate certification; 'STERILE' when all 72 gates pass, 'NON-TERMINAL' otherwise."
     },
     {

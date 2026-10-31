@@ -1,7 +1,7 @@
 {
   "framework": "Principia Metaphysica",
   "audit_type": "26D Terminology Compliance",
-  "generated_at": "2026-10-26T13:09:55.135414Z",
+  "generated_at": "2026-10-31T16:34:06.389455Z",
   "total_files_scanned": 4,
   "files_scanned": [
     "formulas.json",
@@ -15,7 +15,7 @@
     "manifold": "M^{26}(24,2)",
     "signature": "(24,2)",
     "decomposition": "24 (G2 core, = b3) + 2 (times, one per 13D shadow)",
-    "seed": "b3 = 24"
+    "seed": "b3 = 43"
   },
   "deprecated_patterns": [
     {
@@ -44,19 +44,19 @@
     },
     {
       "pattern": "\\bn_gen\\s*=\\s*chi_eff\\s*/\\s*\\(4\\*b3\\)",
-      "suggestion": "Verify chi_eff=144, b3=24 -> 3"
+      "suggestion": "Verify the chi_eff and b3 in force give n_gen = 3"
     }
   ],
   "canonical_keyword_hits": {
     "M^{26}": 49,
     "(24,2)": 793,
     "24 + 2": 54,
-    "b3 = 24": 311,
+    "b3 = 24": 295,
     "G2 holonomy": 362,
     "twisted connected sum": 77,
     "(12,1)": 529,
     "Sp(2,R)": 93
   },
   "flagged_entries": [],
-  "seed_provenance": "All terminology terms trace back to seed b3 = 24 (G2 manifold third Betti number)."
+  "seed_provenance": "All terminology terms trace back to seed b3 = 43 (G2 manifold third Betti number)."
 }

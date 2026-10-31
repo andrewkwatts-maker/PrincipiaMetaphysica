@@ -1,4 +1,5 @@
 {
+  "path_status": "superseded: bundled v23.3 snapshot computed on the retired seed_24 path (b3 = 24); the active path is seed_43_joyce",
   "proof_id": "alpha_geometric",
   "label": "Fine Structure Constant from G2",
   "wl_code": "\n                With[{b3 = 24, kg = 12.318309, ckaf = 27.2, s3v = 2.954060},\n                     FullSimplify[(ckaf * b3^2) / (kg * Pi * s3v)]]\n            ",

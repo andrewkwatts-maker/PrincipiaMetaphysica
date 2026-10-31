@@ -16,6 +16,7 @@
   var FALLBACK = { trunk: '#9aa0b4', branch: '#4fc3f7', dead_end: '#5c5c6b', active: GOLD };
   var NOT_PREDICTION = 'These are this path’s results, not the theory’s predictions.';
 
+  var G = window.PMPathsGlow;
   var S = { graph: null, index: null, view: 'lineage', nodes: {}, sel: null, vb: null, box: null, summaries: {}, token: 0 };
 
   // ---------- DOM helpers ----------
@@ -105,7 +106,7 @@
   function nodeGroup(n, pos, gold, kind) {
     var cls = n.class || n.status || '';
     var isGold = gold || cls === 'active';
-    var g = sv('g', { 'class': 'pp-node', tabindex: '0', role: 'button', 'data-id': n.id,
+    var g = sv('g', { 'class': 'pp-node' + (kind === 'option' ? G.glowClass(n) : ''), tabindex: '0', role: 'button', 'data-id': n.id,
       'aria-label': n.label + (n.status ? ' (' + n.status + ')' : ''),
       transform: 'translate(' + pos[0] + ',' + pos[1] + ')' });
     g.appendChild(sv('title', {}, n.label));
@@ -158,12 +159,23 @@
     if (pts.length > 1) layer.appendChild(sv('polyline', { points: pts.join(' '), fill: 'none', stroke: GOLD, 'stroke-width': 4, opacity: 0.8 }));
   }
 
+  // Edges along reasonable alternative paths glow in the reasonable colour (never gold).
+  function reasonableEdges(layer, pos) {
+    S.graph.edges.forEach(function (e) {
+      if (e.type !== 'path_step' || e.class !== 'reasonable' || !pos[e.source] || !pos[e.target]) return;
+      var a = pos[e.source], b = pos[e.target];
+      layer.appendChild(sv('line', { 'class': 'pp-reasonable-edge', x1: a[0] + a[2] / 2, y1: a[1] + a[3] / 2,
+        x2: b[0] + b[2] / 2, y2: b[1] + b[3] / 2, 'stroke-width': 3 }));
+    });
+  }
+
   function drawSwitches(svg) {
     var pos = S.graph.layout.positions || {};
     var edges = sv('g'), nodes = sv('g');
     S.graph.edges.forEach(function (e) {
       if (e.type === 'has_option' && pos[e.source] && pos[e.target]) drawEdge(edges, pos[e.source], pos[e.target], colorFor(e.class), false, 1.5);
     });
+    reasonableEdges(edges, pos);
     activeOptionPolyline(edges, pos);
     S.graph.nodes.forEach(function (n) {
       if ((n.type === 'fork' || n.type === 'option') && pos[n.id]) {
@@ -171,6 +183,20 @@
       }
     });
     add(svg, edges, nodes);
+  }
+
+  function renderLegend() {
+    var box = document.getElementById('pp-legend');
+    if (!box) return;
+    box.textContent = '';
+    var L = (S.graph && S.graph.legend) || {};
+    var keys = ['active'];
+    if (S.graph && S.graph.ranking) keys.push('reasonable');
+    keys.forEach(function (k) {
+      var li = el('li', 'pp-key pp-key-' + k);
+      add(li, el('span', 'pp-swatch'), el('span', '', (L[k] && L[k].label) || k));
+      box.appendChild(li);
+    });
   }
 
   function setViewBox() {
@@ -313,6 +339,8 @@
       ['Kill condition', a.kill_condition], ['Restored from', a.restored_from]]);
     s.push(add(section('Record'), meta));
     if (a.on_active_path) s.push(el('p', 'pp-tag', 'On the main path.'));
+    var rows = G.inspectorRows(n, S.graph.ranking);
+    if (rows.length) s.push(add(section('Reasonable alternative'), resultsRows(rows)));
     if (a.implemented === false || n.class === 'not_implemented') s.push(el('p', 'pp-tag', 'Not implemented: declared only, nothing is runnable yet.'));
     return s;
   }
@@ -504,9 +532,10 @@
 
   function groupPaths() {
     var groups = {};
+    var glow = G.reasonableOptionKeys(S.graph && S.graph.nodes);
     ((S.index && S.index.paths) || []).forEach(function (p) {
       var g = p.kind === 'main' ? '(main)' : (p.deviation && p.deviation.fork) || 'other';
-      (groups[g] = groups[g] || []).push({ id: p.id, label: p.label, chip: chipFor(p), main: p.kind === 'main', text: [p.label, p.summary, p.why].join(' ') });
+      (groups[g] = groups[g] || []).push({ id: p.id, label: p.label, chip: chipFor(p) + (glow[p.id] ? ', reasonable alternative' : ''), main: p.kind === 'main', text: [p.label, p.summary, p.why].join(' ') });
     });
     ((S.index && S.index.not_computed) || []).forEach(function (p) {
       var g = p.fork || 'other';
@@ -575,6 +604,7 @@
         S.view = 'lineage';
         if (!(S.graph.layout && S.graph.layout.lineage)) S.view = 'switches';
         setView(S.view);
+        renderLegend();
         renderList('');
         if (!S.index) showError('The path index (paths/index.json) is not published, so no path results are available.');
         applyHash();

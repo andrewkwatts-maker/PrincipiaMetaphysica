@@ -13,40 +13,8 @@
     <title>Principia Metaphysica: A Geometric Unification from M-Theory</title>
     <meta name="description" content="Principia Metaphysica - A geometric unification of the Standard Model and cosmology from M-Theory on a single G2 manifold. Full academic paper with dynamic rendering.">
 
-    <!-- MathJax Configuration -->
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true,
-                tags: 'ams',
-                macros: {
-                    shadow: '\\text{shadow}',
-                    // Note: \gimel is built-in to MathJax 3, no need to redefine
-                    kgimel: 'k_{\\gimel}',
-                    // Force displaystyle for fractions in display mode
-                    dfrac: ['\\displaystyle\\frac{#1}{#2}', 2]
-                }
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-                ignoreHtmlClass: 'pm-value|pm-loaded|pm-loading|pm-error|mathjax-ignore'
-            },
-            loader: {
-                load: ['[tex]/amscd', '[tex]/physics']
-            },
-            chtml: {
-                // Ensure proper scaling of display equations
-                scale: 1.0,
-                minScale: 0.5,
-                matchFontHeight: true,
-                displayAlign: 'center',
-                displayIndent: '0'
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
     <script src="../js/pm-constants-loader.js"></script>
     <script src="../js/pm-formula-loader.js"></script>
     <script src="../js/pm-paper-renderer.js"></script>

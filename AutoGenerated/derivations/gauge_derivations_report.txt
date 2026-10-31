@@ -213,12 +213,12 @@ Total derivation steps: 35
 
 --- TOPOLOGY ---
 
-[TOPO-01] G₂ Betti number from TCS construction
+[TOPO-01] Retired seed_24 path: G₂ Betti number from TCS construction
   Query: Solve[{b2 == 14, b3 == 24, chi == b2 - b3 + 2}, {b2, b3, chi}]
-  Expected: b₂ = 14, b₃ = 24, χ = -8
+  Expected: retired seed_24 path: b₂ = 14, b₃ = 24, χ = -8
   PM Value: 24.0
   Verify: https://www.wolframalpha.com/input/?i=Solve%5B%7Bb2%20%3D%3D%2014%2C%20b3%20%3D%3D%2024%2C%20chi%20%3D%3D%20b2%20-%20b3%20%2B%202%7D%2C%20%7Bb2%2C%20b3%2C%20chi%7D%5D
-  Notes: Third Betti number for TCS G₂ manifold #187 (Joyce classification)
+  Notes: Retired seed_24 path: third Betti number for TCS G₂ manifold #187 (Joyce classification)
 
 [TOPO-02] Effective Euler characteristic
   Query: Solve[chi_eff == 6 * b3 && b3 == 24, chi_eff]

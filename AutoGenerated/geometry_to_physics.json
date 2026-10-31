@@ -45,16 +45,16 @@
     "by_status": {
       "GEOMETRIC": 9,
       "THEOREM": 7,
-      "DERIVED": 12,
+      "DERIVED": 11,
       "TOPOLOGY_CANDIDATE": 1,
       "FITTED": 4,
-      "CALIBRATED": 1,
+      "CALIBRATED": 2,
       "PREDICTED": 1
     },
     "by_tone": {
-      "ok": 26,
+      "ok": 25,
       "fail": 5,
-      "fitted": 4
+      "fitted": 5
     },
     "by_verdict": {
       "NO_TEST": 16,
@@ -1198,12 +1198,12 @@
         "pull": 31.020746372490564,
         "verdict": "CIRCULAR"
       },
-      "tone": "ok",
+      "tone": "fitted",
       "figure": "",
       "figure_svg": "",
       "figure_caption": "",
       "value": 40.77842377260982,
-      "status": "DERIVED",
+      "status": "CALIBRATED",
       "value_source": "parameters.json",
       "why": {}
     }

@@ -1,4 +1,5 @@
 {
+  "path_status": "superseded: bundled v23.3 snapshot computed on the retired seed_24 path (b3 = 24); the active path is seed_43_joyce",
   "proof_id": "theta_12_tribimaximal",
   "label": "Solar Angle theta_12",
   "wl_code": "With[{b3 = 24, chi = 144}, base = ArcSin[Sqrt[1/3]] * (180/Pi); correction = (b3/chi) * (Pi/4); N[base - correction, 4]]",

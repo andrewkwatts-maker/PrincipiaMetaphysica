@@ -1,25 +1,25 @@
 {
   "framework": "Principia Metaphysica v24.1",
-  "test_date": "2026-10-26T23:10:04.698857",
+  "test_date": "2026-11-01T02:34:16.361550",
   "falsifiability_status": "FALSIFIABLE (Predictions within experimental reach)",
   "summary": {
     "total_predictions": 6,
-    "testable_within_5_years": 5,
+    "testable_within_5_years": 4,
     "high_risk": 1,
-    "medium_risk": 3
+    "medium_risk": 2
   },
   "primary_kill_switches": [
     {
       "test": "ALP_Principia_Metric",
       "experiment": "BabyIAXO (2025) / IAXO (2028) - THE PRIMARY KILL-SWITCH",
-      "verdict": "THE PRINCIPIA METRIC: Detectable by IAXO (2028) - Definitive falsification test",
+      "verdict": "THE PRINCIPIA METRIC: Should be detected by BabyIAXO (2025) - This is the Eddington Eclipse moment",
       "risk_level": "CRITICAL",
       "timeline": "2025-2028 (BabyIAXO \u2192 IAXO)"
     },
     {
       "test": "Fifth_Force",
       "experiment": "Eot-Wash / Next-gen torsion balance",
-      "verdict": "Predicted at 56.2 microns; needs higher precision",
+      "verdict": "Predicted at 0.0 microns; needs higher precision",
       "risk_level": "MEDIUM",
       "timeline": "Ongoing (current limits apply)"
     },
@@ -31,13 +31,6 @@
       "timeline": "2027+"
     },
     {
-      "test": "Sterile_Neutrino",
-      "experiment": "DUNE",
-      "verdict": "Detectable by DUNE (2028)",
-      "risk_level": "MEDIUM",
-      "timeline": "2028+"
-    },
-    {
       "test": "KK_Gravitons",
       "experiment": "HL-LHC",
       "verdict": "Accessible to HL-LHC (2029)",
@@ -47,47 +40,48 @@
   ],
   "detailed_risk_analysis": {
     "ALP_Principia_Metric": {
-      "status": "TESTABLE",
-      "verdict": "THE PRINCIPIA METRIC: Detectable by IAXO (2028) - Definitive falsification test",
+      "status": "IMMINENT_TEST",
+      "verdict": "THE PRINCIPIA METRIC: Should be detected by BabyIAXO (2025) - This is the Eddington Eclipse moment",
       "falsification_risk": "CRITICAL",
-      "predicted_mass_meV": 3.5100000000000002,
-      "predicted_coupling": 1e-11,
+      "predicted_mass_meV": 3.51,
+      "predicted_coupling": 1.2304479796271353e-06,
+      "baby_iaxo_limit": 1.5e-11,
       "iaxo_limit": 1e-12,
-      "ratio": 10.0,
-      "timeline": "2028",
-      "note": "If IAXO excludes this mass/coupling, G\u2082 compactification is falsified."
+      "ratio": 82029.8653084757,
+      "timeline": "2025-2028",
+      "note": "Unavoidable consequence of M\u00b2\u2076 \u2192 M\u2074 projection. If not detected, theory is FALSIFIED."
     },
     "Fifth_Force": {
       "status": "VIABLE",
-      "verdict": "Predicted at 56.2 microns; needs higher precision",
+      "verdict": "Predicted at 0.0 microns; needs higher precision",
       "falsification_risk": "MEDIUM",
-      "predicted_value": 5.62e-05,
+      "predicted_value": 1.7742216103450065e-09,
       "experimental_limit": 0.0001,
-      "margin": 0.5619999999999999
+      "margin": 1.7742216103450063e-05
     },
     "Proton_Decay": {
       "status": "IMMINENT_TEST",
       "verdict": "Should be detected by Hyper-K (2027)",
       "falsification_risk": "HIGH",
-      "predicted_lifetime": 4.757e+34,
+      "predicted_lifetime": 4.757399129595567e+34,
       "experimental_sensitivity": 1e+35,
-      "ratio": 0.47570000000000007
+      "ratio": 0.47573991295955675
     },
     "Sterile_Neutrino": {
-      "status": "TESTABLE",
-      "verdict": "Detectable by DUNE (2028)",
-      "falsification_risk": "MEDIUM",
-      "predicted_mixing": 0.01,
+      "status": "MARGINAL",
+      "verdict": "Near DUNE sensitivity threshold",
+      "falsification_risk": "LOW",
+      "predicted_mixing": 7.862899443278484e-05,
       "experimental_limit": 0.001,
-      "ratio": 10.0
+      "ratio": 0.07862899443278483
     },
     "KK_Gravitons": {
       "status": "TESTABLE",
       "verdict": "Accessible to HL-LHC (2029)",
       "falsification_risk": "MEDIUM",
-      "predicted_mass": 4.5,
+      "predicted_mass": 5.0,
       "experimental_reach": 6.0,
-      "margin": 1.3333333333333333
+      "margin": 1.2
     },
     "Cross_Pair_Bell": {
       "status": "SPECULATIVE",
@@ -133,12 +127,11 @@
   ],
   "peer_review_response": {
     "principia_metric_statement": "THE PRINCIPIA METRIC (SPECULATIVE ANSATZ): This framework estimates a topologically motivated ALP at m_a = 3.51 \u00b1 0.02 meV with coupling g_a\u03b3\u03b3 ~ 10\u207b\u00b9\u00b9 GeV\u207b\u00b9. These values are estimated from EIS sector topology and fall within BabyIAXO/IAXO sensitivity (2025-2028), making this the primary near-term experimental test. Note: m_a and g_agg are not uniquely fixed by the M\u00b2\u2076 decomposition; non-detection would constrain the EIS sector but an independent derivation is needed to elevate this to a firm prediction.",
-    "falsifiability_criterion": "This theory makes 5 predictions testable within 5 years, with the ALP Principia Metric as the primary kill-switch. Specifically, if BabyIAXO/IAXO reach their projected sensitivities and find no signal at 3.51 meV, the EIS-sector ansatz is constrained. The 3.51 meV value is OPEN: no engine code computes it (alp_portals gives about 1.11e2 eV on the adopted b3 = 43), so a null result cannot by itself falsify the framework. This is intended to satisfy Popper's criterion for scientific falsifiability with a clear, time-bound experimental test.",
+    "falsifiability_criterion": "This theory makes 4 predictions testable within 5 years, with the ALP Principia Metric as the primary kill-switch. Specifically, if BabyIAXO/IAXO reach their projected sensitivities and find no signal at 3.51 meV, the EIS-sector ansatz is constrained. The 3.51 meV value is OPEN: no engine code computes it (alp_portals gives about 1.11e2 eV on the adopted b3 = 43), so a null result cannot by itself falsify the framework. This is intended to satisfy Popper's criterion for scientific falsifiability with a clear, time-bound experimental test.",
     "key_experiments": [
       "BabyIAXO (2025) / IAXO (2028) - THE PRIMARY KILL-SWITCH",
       "Eot-Wash / Next-gen torsion balance",
       "Hyper-Kamiokande",
-      "DUNE",
       "HL-LHC"
     ],
     "earliest_test": "2025 (BabyIAXO commissioning)",

@@ -2,9 +2,14 @@
   "version": "16.2",
   "title": "Gates of Integrity",
   "description": "Complete sterile certification framework with 72 hard locks organized into 6 symmetry blocks (12 gates each).",
-  "timestamp": "2026-10-26T23:05:09.404638",
+  "timestamp": "2026-11-01T02:28:22.353571",
   "architecture": {
-    "total_gates": 72,
+    "total_gates": 71,
+    "defined_gates": 72,
+    "not_applicable": [
+      31
+    ],
+    "path_id": "active",
     "blocks": 6,
     "gates_per_block": 12,
     "formula": "72 = 24 × 3 (torsion pin triality)",

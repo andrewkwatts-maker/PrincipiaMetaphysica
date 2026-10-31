@@ -1,4 +1,5 @@
 {
+  "path_status": "superseded: bundled v23.3 snapshot computed on the retired seed_24 path (b3 = 24); the active path is seed_43_joyce",
   "proof_id": "proton_lifetime",
   "label": "Proton Lifetime tau_p",
   "wl_code": "With[{mPl = 1.22*10^19, alphaGUT = 1/24, roots = 288, s = 2.125, b3 = 24}, mGUT = mPl*(163/roots); tau = (mGUT^4 * alphaGUT^2) / (roots^5) * s * b3; N[tau, 2]]",

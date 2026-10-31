@@ -1,6 +1,10 @@
 {
   "generator": "fork_implications",
   "adopted_selection": {
+    "action_bulk_sectors": "undecided",
+    "action_bulk_spinor": "weyl",
+    "action_planck_exponent": "exponent_24",
+    "action_sign_convention": "mostly_plus_mtw",
     "b3_origin": "derived_joyce_a1",
     "b3_seed": "seed_43_joyce",
     "bulk_signature": "24_2",
@@ -24,9 +28,9 @@
     "theory_uncertainty_policy": "cited_only",
     "twisted_norm_convention": "orbit_sum"
   },
-  "adopted_digest": "9ec96695c2cc2a4f",
-  "n_forks": 22,
-  "n_deviations": 64,
+  "adopted_digest": "27619df266c8e490",
+  "n_forks": 26,
+  "n_deviations": 76,
   "watched": {
     "observables": [
       "ancestral_roots",
@@ -76,6 +80,126 @@
     "free_set_size"
   ],
   "rows": [
+    {
+      "fork": "action_bulk_sectors",
+      "option": "e8xe8_ym",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "action_bulk_sectors",
+      "option": "flux_f4",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "action_bulk_sectors",
+      "option": "kk_tower",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "action_bulk_sectors",
+      "option": "none",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "action_bulk_sectors",
+      "option": "undecided",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "action_bulk_spinor",
+      "option": "dirac",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "action_bulk_spinor",
+      "option": "weyl",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "action_planck_exponent",
+      "option": "exponent_23",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "action_planck_exponent",
+      "option": "exponent_24",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "action_planck_exponent",
+      "option": "exponent_25",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "action_sign_convention",
+      "option": "mostly_minus",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "action_sign_convention",
+      "option": "mostly_plus_mtw",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
     {
       "fork": "b3_origin",
       "option": "arc_flag_stabiliser",

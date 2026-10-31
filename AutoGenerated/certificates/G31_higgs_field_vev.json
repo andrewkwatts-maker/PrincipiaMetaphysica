@@ -11,24 +11,15 @@
   "result": "v = 246.37 GeV",
   "formula": "v = 246 GeV",
   "verification_status": "VERIFIED",
-  "evaluation_status": "COMPUTED_PASS",
+  "evaluation_status": "NOT_APPLICABLE",
   "evaluation": {
-    "tier": "registry",
-    "source": "PDG 2024 v_EW",
-    "checks": [
-      {
-        "path": "geometry.higgs_vev",
-        "value": 246.3661977236758,
-        "expected": 246.22,
-        "rel": 0.0005937686771010139,
-        "ok": true
-      }
-    ],
-    "status": "COMPUTED_PASS"
+    "tier": "premise",
+    "status": "NOT_APPLICABLE",
+    "basis": "premise needs b3_seed=seed_24; path has seed_43_joyce"
   },
   "result_unmatched_numbers": [],
   "derivation_status": "DERIVED",
   "note": "Gate 31: DERIVED: Appendix J derives v = k_gimel × (b3-4) from G2 topology. k_gimel = b3/2 + 1/π = 12.318; (b3-4) = 20 = EW DOF. 0.06% from PDG 2024 (246.22 GeV). No kRc tuning required.. Background tension of V7 manifold",
-  "timestamp": "2026-10-26T13:05:10.369546Z",
+  "timestamp": "2026-10-31T16:28:23.411657Z",
   "hash": "cb896ab1ba3c8054"
 }

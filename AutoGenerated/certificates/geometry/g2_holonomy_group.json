@@ -1,4 +1,5 @@
 {
+  "path_status": "superseded: bundled v23.3 snapshot computed on the retired seed_24 path (b3 = 24); the active path is seed_43_joyce",
   "proof_id": "g2_holonomy_group",
   "label": "G2 Maximal Subgroup",
   "wl_code": "With[{b3 = 24}, branchSterile = 1; branchActive = (b3 - 3)/7; holonomyLocked = (b3 == 24); {branchSterile, branchActive, holonomyLocked}]",

@@ -14,31 +14,8 @@
     <title>Section Browser - Principia Metaphysica v24.2</title>
     <meta name="description" content="Browse all paper sections of Principia Metaphysica with search and filtering. Dynamically loaded from theory_output.json.">
 
-    <!-- MathJax Configuration -->
-    <script>
-        MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true,
-                tags: 'ams',
-                macros: {
-                    shadow: '\\text{shadow}'
-                }
-            },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-                ignoreHtmlClass: 'pm-value|pm-loaded|pm-loading|pm-error|mathjax-ignore'
-            },
-            startup: {
-                pageReady: () => {
-                    return MathJax.startup.defaultPageReady().then(() => {
-                    });
-                }
-            }
-        };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../js/mathjax-config.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
 
     <!-- PM Loaders -->
     <script src="../js/pm-constants-loader.js"></script>
