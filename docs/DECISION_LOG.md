@@ -1894,3 +1894,19 @@ In the last case seed_24's better fit stands as evidence and must be reported as
     9. `master-action-27d` cites the withdrawn critical-dimension argument.
     10. The SU(3)/SU(2) formulas are DERIVED while OPEN (D-011).
   - Proposal (Track M2): make choices 1, 2 and 7 forks, so each candidate action is runnable.
+
+## D-029 · 2026-11-01 · ACTION · RULED — one master action (gravity plus a Weyl spinor), one path
+
+**Problem.**
+- Nine statements of the master action (Track M audit, A to I) agree on the bulk and disagree on field content; none is a complete functional, and no master-action fork option changes chi2.
+- No path was internally consistent: two contradictions blocked all 40.
+
+**Ruling.**
+1. **Action.** S_26 = ∫ d^26X √|G| [ (M_*^24/2) R_26 + Ψ̄ iΓ^M D_M Ψ ], Ψ a Weyl spinor of Cl(24,2) (4096), mostly-plus metric, MTW Riemann sign, Planck exponent 24. Status ANSATZ. M_* is an input scale. Canonical formula id `master-action-26d`; the id `master-action-27d` is retired; statements A to E stay, marked SUPERSEDED.
+2. **Fork.** `action_bulk_sectors = none` (owner item 1). Items 2 (Weyl), 4 (24), 5 (mostly-plus MTW) stay. Items 3 and 10 close. Open terms 15 → 9; the same three ladder checks fail (`nonabelian_gauge_source`, `owner_item_6`, `zero_modes:scalar`).
+3. **Readmission.** A dropped term (YM, moduli, ξRφ², L_bridge, L_C, V_face, V_bridge, V_tor, OR, ρ_breath, F_4, KK tower) returns only with a definition, a source for its coefficient and a ladder check that can fail.
+4. **Neutrino sum.** One claim: `particle.sigma_m_base_eV` = 0.0605 eV, inside the window between the normal-ordering floor (about 0.059 eV) and the DESI DR2 + CMB (ΛCDM) 95% bound 0.064 eV (arXiv:2503.14738). `neutrino.sum_masses` (0.1020, passes only the retired Planck 2018 bound) and `particle.sigma_m_refined_eV` (0.0425, below the floor) become intermediates.
+5. **Re(T).** Check 3 of the switch search applies D-015: with no moduli potential adopted, Re(T) passes when every consumer labels it CALIBRATED / OPEN and no row claims it derived. The racetrack comparison stays under `re_t_adoption = computed_vacuum`.
+6. **Path.** Main path `4f53cda18c2baa0c` with the four action options above, `theory_uncertainty_policy = cited_only`, `re_t_adoption = calibrated`. It becomes the first internally consistent path. chi2 is unchanged by the action.
+
+**Left open.** Owner items 6 (second time), 7 (M_* input), 8 (moot unless YM returns), 9 (D-011 labels), 11 (computed). Reasons and the candidate table: metaphysica `docs/plan/MASTER_ACTION_SELECTION_2026-11-01.md`.
