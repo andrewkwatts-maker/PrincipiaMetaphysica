@@ -4,7 +4,7 @@
 on one assumption that must travel with every quotation of it.
 Everything below is computed from structures already in the framework;
 nothing is fitted and no new constant is introduced. Register cross-reference:
-`docs/OUTSTANDING_ISSUES.md` §1.8 and §1.11.
+`docs/archive/OUTSTANDING_ISSUES_closed.md` §1.8 and §1.11 (both closed; see docs/OUTSTANDING_ISSUES.md for the index).
 
 ---
 
